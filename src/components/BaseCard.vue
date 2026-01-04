@@ -1,5 +1,5 @@
 <script setup>
-// import CardBackground from '@/assets/CardBackground.png';
+import CardBackground from '@/assets/Maticni lekari www pozadina.png';
 </script>
 
 <template>

@@ -19,51 +19,53 @@ const { t } = useI18n();
   <base-container>
     <base-card>
       <paragraph-no-indent class="text-center">
-        <b><span class="text-orange-darken-3">{{ t('accommodationPage.p1B') }}</span></b>
+        <b><span class="text-orange-darken-3">СМЕСТУВАЊЕ</span></b>
       </paragraph-no-indent>
       <v-card rounded="l" class="mb-2 pa-1 text-center bg-light-blue-darken-4">
-        <v-card-text><b>{{ t('accommodationPage.p2B') }}</b></v-card-text>
+        <v-card-text><b>Цени за сместување во хотелот:</b></v-card-text>
       </v-card>
       <v-card outlined class="mt-5 mb-5">
         <v-responsive>
           <v-table>
             <thead>
             <tr>
-              <th class="text-center bg-light-blue-darken-4 border">{{ t('accommodationPage.t1') }}</th>
-              <th class="text-center bg-light-blue-darken-4 border">{{ t('accommodationPage.t2') }}</th>
-              <th class="text-center bg-light-blue-darken-4 border">{{ t('accommodationPage.t3') }}</th>
+              <th class="text-center bg-light-blue-darken-4 border">ХОТЕЛ</th>
+              <th class="text-center bg-light-blue-darken-4 border">СМЕСТУВАЊЕ</th>
+              <th class="text-center bg-light-blue-darken-4 border">ЦЕНА ПО ЛИЦЕ/НОЌ за ПОЛУПАНСИОН</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-              <th rowspan="2" class="bg-light-blue-lighten-4 border text-center">{{ t('accommodationPage.td1').split('/')[0] }} &#11088;&#11088;&#11088;&#11088; <br/> {{ t('accommodationPage.td1').split('/')[1] }} </th>
-              <td class="bg-light-blue-lighten-4 border">{{ t('accommodationPage.td2') }}</td>
-              <td class="bg-light-blue-lighten-4 border"><b>{{ t('accommodationPage.td3B') }}</b></td>
+              <th rowspan="2" class="bg-light-blue-lighten-4 border text-center">Хотел ДРИМ &#11088;&#11088;&#11088;&#11088; <br/> Струга </th>
+              <td class="bg-light-blue-lighten-4 border">Еднокреветна</td>
+              <td class="bg-light-blue-lighten-4 border"><b>80 еур</b></td>
             </tr>
             <tr>
-              <td class="bg-light-blue-lighten-4 border">{{ t('accommodationPage.td4') }}</td>
-              <td class="bg-light-blue-lighten-4 border"><b>{{ t('accommodationPage.td5B') }}</b></td>
+              <td class="bg-light-blue-lighten-4 border">Двокреветна</td>
+              <td class="bg-light-blue-lighten-4 border"><b>65 еур</b></td>
             </tr>
             </tbody>
           </v-table>
         </v-responsive>
       </v-card>
       <paragraph-no-indent class="text-center">
-        <b>{{ t('accommodationPage.p3B') }}</b>
+        <b>Можно е сместување и во повеќе креветни соби.</b>
       </paragraph-no-indent>
       <small-card class="bg-light-blue-darken-4 mb-5">
-        <paragraph-no-indent class="text-center"><span class="text-orange-darken-3"><b>{{ t('accommodationPage.p4B') }}</b></span></paragraph-no-indent>
+        <paragraph-no-indent class="text-center"><span class="text-orange-darken-3"><b>ОТКАЖУВАЊЕ НА СМЕСТУВАЊЕ</b></span></paragraph-no-indent>
         <base-list class="font-weight-bold">
-          <li>{{ t('accommodationPage.l1') }} <span class="text-orange-darken-3">{{ t('accommodationPage.l1Y') }}</span>{{ t('accommodationPage.l1_2') }} <span class="text-orange-darken-3">{{ t('accommodationPage.l1Y2') }}</span>{{ t('accommodationPage.l1_3') }}</li>
-          <li>{{ t('accommodationPage.l2') }} <span class="text-orange-darken-3">{{ t('accommodationPage.l2Y') }}</span>{{ t('accommodationPage.l2_2') }} <span class="text-orange-darken-3">{{ t('accommodationPage.l2Y2') }}</span>{{ t('accommodationPage.l2_3') }}</li>
-          <li>{{ t('accommodationPage.l3') }} <span class="text-orange-darken-3">{{ t('accommodationPage.l3Y') }}</span>{{ t('accommodationPage.l3_2') }}</li>
+          <li>За откажано сместување  <span class="text-orange-darken-3">до 16.03.2026, </span>средствата <span class="text-orange-darken-3">ќе се рефундираат во целост</span> намалени за банкарските трошоци.</li>
+          <li>За откажано сместување <span class="text-orange-darken-3">од 17.03.2026, </span>средствата <span class="text-orange-darken-3">ќе се рефундираат до 50%</span> од уплатените средства, намалени за банкарските трошоци.</li>
+          <li>За откажано сместување <span class="text-orange-darken-3">после 01.04.2026, НЕ СЛЕДУВА РЕФУНДАЦИЈА НА УПЛАТЕНИТЕ СРЕДСТВА.</span></li>
         </base-list>
       </small-card>
-      <paragraph-no-indent>
-        <b>{{ t('accommodationPage.p5B') }}</b>
+      <paragraph-no-indent class="text-center">
+        <b>ПРИСУСТВО ДО СИТЕ ЛОКАЦИИ ВО ХОТЕЛ ДРИМ, ЌЕ БИДЕ ДОЗВОЛЕН
+          САМО ЗА ЛИЦАТА КОИ ИМААТ ПЛАТЕНО КОТИЗАЦИЈА ЗА СИМПОЗИУМОТ.
+        </b>
       </paragraph-no-indent>
       <paragraph-no-indent class="mb-5">
-        <b>{{ t('accommodationPage.p6B') }}</b>
+        <b>За сите информации и детали за сместување, превоз, техничка и логистичка поддршка, ве молиме обратете се до агенцијата организатор и реализатор:</b>
       </paragraph-no-indent>
       <div class="d-inline-block align-center">
         <v-img :src="brandLogo" :width="'10rem'"></v-img>
@@ -74,8 +76,8 @@ const { t } = useI18n();
             <v-row dense no-gutters justify="center" align="center">
               <v-icon class="pa-7 responsive-icon" color="white">mdi-phone-in-talk</v-icon>
               <ul class="font-weight-bold text-left custom-list" style="list-style-type: none">
-                <li><a href="tel:071/317-377" class="text-white text-decoration-none">071/317-377</a>, {{ t('accommodationPage.marjan') }}</li>
-                <li><a href="tel:070/392-638" class="text-white text-decoration-none">070/392-638</a>, {{ t('accommodationPage.lara') }}</li>
+                <li><a href="tel:071/317-377" class="text-white text-decoration-none">071/317-377</a>, Марјан Димески</li>
+                <li><a href="tel:070/392-638" class="text-white text-decoration-none">070/392-638</a>, Лара</li>
               </ul>
             </v-row>
           </v-col>
@@ -83,7 +85,7 @@ const { t } = useI18n();
             <v-row dense no-gutters justify="center" align="center">
               <v-icon class="responsive-icon pa-7" color="white">mdi-email-outline</v-icon>
               <ul class="font-weight-bold text-left custom-list" style="list-style-type: none">
-                <li><a href="mailto:globalneta@gmail.com" class="text-white">globalneta@gmail.com</a> {{ t('accommodationPage.andor') }}</li>
+                <li><a href="mailto:globalneta@gmail.com" class="text-white">globalneta@gmail.com</a> и/или</li>
                 <li><a href="mailto:globalnetadv@globalnetadv.mk" class="text-white">globalnetadv@globalnetadv.mk</a></li>
               </ul>
             </v-row>
@@ -110,7 +112,7 @@ const { t } = useI18n();
         </v-col>
       </v-row>
       <base-paragraph class="text-center mb-0">
-        <a href="https://pharmacypractice2025.mk/" target="_blank" class="text-decoration-none text-lg-h4 font-weight-bold"><span class="text-orange-darken-3">www.pharmacypractice2025.mk</span></a>
+        <a href="https://zplrm2026.mk/" target="_blank" class="text-decoration-none text-lg-h4 font-weight-bold"><span class="text-orange-darken-3">www.zplrm2026.mk</span></a>
       </base-paragraph>
     </base-card>
   </base-container>

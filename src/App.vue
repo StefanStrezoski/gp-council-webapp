@@ -1,6 +1,6 @@
 <template>
   <v-app>
-<!--    <NavBar />-->
+    <NavBar />
     <!-- Main Content -->
     <v-main class="main-content">
       <v-container fluid class="pa-0">
@@ -20,7 +20,7 @@ import NavBar from "@/components/NavBar.vue";
 
 <style scoped>
 .main-content {
-  background-color: rgba(130, 200, 229, 0.62);
+  background-color: rgba(166, 186, 194, 0.62);
   min-height: 100vh;
 }
 

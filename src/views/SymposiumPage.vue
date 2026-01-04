@@ -3,85 +3,131 @@
     <small-card>
       <base-paragraph class="hero-title text-center">
         <b>
-          {{ t('navtitle.one') }} <br/>
-          {{ t('navtitle.two') }}
+          Здружение на приватни лекари на Р.Македонија - ЗПЛРМ <br/>
+          „Како до подобро здравје“
         </b>
       </base-paragraph>
     </small-card>
-    <base-card class="mt-10"
-      >
-        <base-paragraph>{{ t('intro') }}</base-paragraph>
-        <base-paragraph>
-          {{ t('symposiumPage.p1') }}
-        </base-paragraph>
-        <base-paragraph>
-          {{ t('symposiumPage.p2') }}
-        </base-paragraph>
-        <base-list style="color: #134b7a">
-          <li>
-            <b>{{ t('symposiumPage.l1B') }}</b> {{ t('symposiumPage.l1') }}
-          </li>
-          <li>
-            <b>{{ t('symposiumPage.l2B') }}</b> {{ t('symposiumPage.l2') }}
-
-          </li>
-          <li>
-            <b>{{ t('symposiumPage.l3B') }}</b> {{ t('symposiumPage.l3') }}
-          </li>
-        </base-list>
-        <base-paragraph>
-          {{ t('symposiumPage.p3') }}
-        </base-paragraph>
-        <base-paragraph>
-          {{ t('symposiumPage.p4') }}
-        </base-paragraph>
-        <base-paragraph>
-          {{ t('symposiumPage.p5') }}
-        </base-paragraph>
-        <base-paragraph>
-          {{ t('symposiumPage.p6') }}
-        </base-paragraph>
-        <base-paragraph>
-          {{ t('symposiumPage.p7') }}
-        </base-paragraph>
-        <base-paragraph class="text-center">
-          <b>
-            {{ t('symposiumPage.p8') }}
-          </b>
-        </base-paragraph>
-        <base-paragraph>
-          {{ t('symposiumPage.p9') }}
-        </base-paragraph>
-        <v-row>
-          <v-col cols="4">
-            <div class="d-flex flex-column align-center">
-              <base-paragraph class="text-center">
-                <b>{{ t('symposiumPage.signatures.sig1B') }} </b> <br/>
-                {{ t('symposiumPage.signatures.sig1') }}
-              </base-paragraph>
-              <v-img :width="200" :src="oneSignature"></v-img>
-            </div>
-          </v-col>
-          <v-col cols="4">
-            <div class="d-flex flex-column align-center">
-              <base-paragraph class="text-center">
-                <b>{{ t('symposiumPage.signatures.sig2B') }} </b> <br/>
-                {{ t('symposiumPage.signatures.sig2') }}
-              </base-paragraph>
-              <v-img :width="200" :src="twoSignature"></v-img>
-            </div>
-          </v-col>
-          <v-col cols="4">
-            <div class="d-flex flex-column align-center">
-              <base-paragraph class="text-center">
-                <b>{{ t('symposiumPage.signatures.sig3B') }} </b> <br/>
-                {{ t('symposiumPage.signatures.sig3') }}
-              </base-paragraph>
-              <v-img :width="200" :src="threeSignature"></v-img>
-            </div>
-          </v-col>
-        </v-row>
+    <base-card class="mt-10">
+      <base-paragraph>Ми претставува особена чест и задоволство да ве поканам на </base-paragraph>
+      <base-paragraph class="text-center">
+        <b>
+          Првиот Симпозиум на Здружението на приватните лекари на Р. Македонија – “ЗПЛРМ”
+          “КАКО ДО ПОДОБРО ЗДРАВЈЕ”
+        </b>
+      </base-paragraph>
+      <base-paragraph>
+        Здружението, повеќе од три децении претставува важен столб во нашата професионална заедница.
+        Нашата сила е во членството кое брои повеќе од <b>1400</b> приватни лекари од областа на општа-семејна медицина,
+        интернисти, кардиолози, ендокринолози, гинеколози и акушери, како и други специјалности.
+      </base-paragraph>
+      <base-paragraph>
+        Поставеноста со Координатори во скоро секој град низ Македонија,
+        овозможува побрзо пренесување на информации помеѓу членството и од нив до Управниот одбор.
+      </base-paragraph>
+      <base-paragraph>
+        Мисијата на Здружението отсекогаш била насочена кон унапредување на здравствениот систем,
+        подобрување на стандардите во нашата професија и континуирана борба за повисок квалитет на услугите.
+      </base-paragraph>
+      <base-paragraph>
+        Во текот на овие 30 години, преку бројни иницијативи, активности и професионални заложби, ЗПЛРМ ја градеше својата улога како незаменлив
+        партнер во развојот на здравството и како поддршка на секој стручен кадар кој се стреми кон подобрување на својата работа.
+      </base-paragraph>
+      <base-paragraph>
+        Овој Симпозиум не е само формален собир – тој претставува значаен чекор напред кон зајакнување на нашата професионална заедница,
+        унапредување на знаењето и создавање платформа каде секој од нас може да придонесе, да научи и да се поврзе со колеги со иста визија и ист стремеж.
+      </base-paragraph>
+      <base-paragraph>
+        Нашата професија бара посветеност, континуирано надградување и меѓусебна поддршка.
+        Токму затоа, овој Симпозиум претставува место каде што идеите се претвораат во заедничка сила, а искуствата во водилка кон подобра практика, подобри стандарди и подобри резултати за сите оние на кои им служиме.
+      </base-paragraph>
+      <base-paragraph>
+        На овој Симпозиум ќе се обработуваат теми од нашето секојдневно работење, и тоа проблемите во неврологијата,
+        дијабетот, педијатрија, кардиологија и ендокринологија- области кои директно влијаат врз здравјето на нашите пациенти.
+      </base-paragraph>
+      <base-paragraph>
+        Токму затоа ги избравме овие теми како фокус на овој настан.
+      </base-paragraph>
+      <base-paragraph>
+        Учеството на околу 300 доктори и други медицински лица, како и предавањата
+        на еминентни експерти и фармацевтските компании, претставува доволна причина и вие да се вклучите активно во овоја настан.
+      </base-paragraph>
+      <base-paragraph>
+        Однапред сакам да искажам искрена благодарност до сите предавачи, учесници и гости како и компании кои ќе не поддржат
+        и ќе помогнат со своето присуство да го збогатите овој настан со што ќе му се даде вистинско значење.
+      </base-paragraph>
+      <base-paragraph>
+        Убедена сум дека вашите предавања, дискусии и размена на искуства ќе отворат нови перспективи и
+        ќе ни помогнат да продолжиме уште посилни, уште пообединети и уште повлијателни во нашата област.
+      </base-paragraph>
+      <base-paragraph>
+        Нека ова биде прв од многу симпозиуми кои ќе ја подигнат професионалната култура,
+        ќе создадат нови партнерства и ќе го унапредат квалитетот во нашата работа.
+      </base-paragraph>
+      <base-paragraph class="text-center">
+        Претседател на ЗПЛРМ  <br/>
+        <b>
+          д-р Лилија Чолакова Дервишова-
+        </b> <br/>
+        специјалист по Семејна медицина
+      </base-paragraph>
     </base-card>
+    <v-row class="mt-5">
+      <v-col cols="6">
+        <v-card rounded="xl" class="mb-2 pa-1 text-left title-card">
+          <v-card-text><b class="list-title">Научен одбор</b></v-card-text>
+        </v-card>
+        <small-card class="pl-0">
+          <base-list class="org-items">
+            <li>
+              Д-р Лилија Чолакова Дервишова
+            </li>
+            <li>
+              Д-р Лидија Ристовска
+            </li>
+            <li>
+              Д-р Мирослав Бошковски
+            </li>
+            <li>
+              Д-р Перо Пењушков
+            </li>
+            <li>
+              Д-р Ејуб Ѓулша
+            </li>
+            <li>
+              Д-р Абиб Мулаи
+            </li>
+          </base-list>
+        </small-card>
+      </v-col>
+      <v-col cols="6">
+        <v-card rounded="xl" class="mb-2 pa-1 text-left title-card">
+          <v-card-text><b class="list-title">Oрганизациски одбор</b></v-card-text>
+        </v-card>
+        <small-card class="pl-0">
+          <base-list class="org-items">
+            <li>
+              Д-р. Мевљудин Коч
+            </li>
+            <li>
+              Д-р Светлана Трифуновска
+            </li>
+            <li>
+              Д-р. Љупчо Стефановски
+            </li>
+            <li>
+              Д-р Христина Лескароска
+            </li>
+            <li>
+              Д-р Татјана Блажевска
+            </li>
+            <li>
+              Д-р Иле Стаменковски
+            </li>
+          </base-list>
+        </small-card>
+      </v-col>
+    </v-row>
   </base-container>
 </template>
 
@@ -89,14 +135,9 @@
 import BaseCard from "@/components/BaseCard.vue";
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import BaseList from "@/components/BaseList.vue";
-// import oneSignature from "@/assets/Potpis1.png";
-// import twoSignature from "@/assets/Potpis2.png";
-// import threeSignature from "@/assets/Potpis3.png";
 import SmallCard from "@/components/SmallCard.vue";
-import {useI18n} from "vue-i18n";
+import BaseList from "@/components/BaseList.vue";
 
-const { t } = useI18n();
 </script>
 
 <style scoped>
@@ -108,6 +149,20 @@ const { t } = useI18n();
   .hero-title {
     font-size: 0.7rem;
   }
+  .list-title {
+    font-size: 0.7rem !important;
+  }
+}
 
+.org-items{
+  list-style-type: none;
+  text-align: left;
+}
+.title-card {
+  background-color: #125280;
+  color: white;
+}
+.list-title {
+  font-size: 1.2rem;
 }
 </style>

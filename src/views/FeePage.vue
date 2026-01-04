@@ -8,6 +8,7 @@ import ParagraphNoIndent from "@/components/ParagraphNoIndent.vue";
 import {useI18n} from "vue-i18n";
 import {ref} from "vue";
 import {v4 as uuidv4} from "uuid";
+import BaseParagraph from "@/components/BaseParagraph.vue";
 import {supabase} from "@/supabase/supabase.js";
 
 const { t } = useI18n();
@@ -121,7 +122,7 @@ async function handleSubmit() {
   <base-container>
     <base-card>
       <paragraph-no-indent class="text-center">
-        <b><span class="text-orange-darken-3">{{ t('feesPage.p1B') }}</span></b>
+        <b><span class="text-orange-darken-3">КОТИЗАЦИЈА ЗА УЧЕСНИЦИ</span></b>
       </paragraph-no-indent>
       <v-card outlined class="mt-5 mb-5">
         <v-responsive>
@@ -129,126 +130,116 @@ async function handleSubmit() {
             <thead>
             <tr>
               <th class="text-center bg-light-blue-darken-2 border">
-                {{ t('feesPage.t0') }}
+                Категорија
               </th>
               <th class="text-center bg-light-blue-darken-2 border">
-                {{ t('feesPage.t1') }}
+                Вид на учесник
               </th>
               <th class="text-center bg-light-blue-darken-2 border">
-                {{ t('feesPage.t2') }}
+                УПЛАТА
+                ДО 16.03.2026
               </th>
               <th class="text-center bg-light-blue-darken-2 border">
-                {{ t('feesPage.t3') }}
+                УПЛАТА
+                ОД 17.03.2026
               </th>
               <th class="text-center bg-light-blue-darken-2 border">
-                {{ t('feesPage.t4') }}
+                УПЛАТА
+                ОД 01.04.2026
               </th>
             </tr>
             </thead>
             <tbody>
             <tr>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td00')}}
+                1
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td1').split('/')[0]}} <br/>
-                {{ t('feesPage.td1').split('/')[1]}}
+                Членови на ЗПЛРМ
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td2').split('/')[0]}} <br/>
-                {{ t('feesPage.td2').split('/')[1]}}
+                8.990 ден. <br/>
+                145 € <br/>
+                (123 € + 18% ДДВ)
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td3').split('/')[0]}} <br/>
-                {{ t('feesPage.td3').split('/')[1]}}
+                9.920 ден. <br/>
+                160 € <br/>
+                (136 € + 18% ДДВ)
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td4').split('/')[0]}} <br/>
-                {{ t('feesPage.td4').split('/')[1]}}
-              </td>
-            </tr>
-            <tr>
-              <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td01')}}
-              </td>
-              <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td5').split('/')[0]}} <br/>
-                {{ t('feesPage.td5').split('/')[1]}}
-              </td>
-              <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td6').split('/')[0]}} <br/>
-                {{ t('feesPage.td6').split('/')[1]}}
-              </td>
-              <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td7').split('/')[0]}} <br/>
-                {{ t('feesPage.td7').split('/')[1]}}
-              </td>
-              <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td8').split('/')[0]}} <br/>
-                {{ t('feesPage.td8').split('/')[1]}}
+                11.160 ден. <br/>
+                180 € <br/>
+                (153 € + 18% ДДВ)
               </td>
             </tr>
             <tr>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td02')}}
+                2
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td9').split('/')[0]}} <br/>
-                {{ t('feesPage.td9').split('/')[1]}}
+                Останати УЧЕСНИЦИ
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td10').split('/')[0]}} <br/>
-                {{ t('feesPage.td10').split('/')[1]}}
+                10.230 ден. <br/>
+                165 € <br/>
+                (140 € + 18% ДДВ)
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td11').split('/')[0]}} <br/>
-                {{ t('feesPage.td11').split('/')[1]}}
+                11.470 ден. <br/>
+                185 € <br/>
+                (157 € + 18% ДДВ)
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td12').split('/')[0]}} <br/>
-                {{ t('feesPage.td12').split('/')[1]}}
-              </td>
-            </tr>
-            <tr>
-              <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td03') }}
-              </td>
-              <td class="bg-light-blue-lighten-4 border">
-                &#11088;{{ t('feesPage.td13').split('/')[0]}} <br/>
-                {{ t('feesPage.td13').split('/')[1]}}
-              </td>
-              <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td14').split('/')[0]}} <br/>
-                {{ t('feesPage.td14').split('/')[1]}}
-              </td>
-              <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td15').split('/')[0]}} <br/>
-                {{ t('feesPage.td15').split('/')[1]}}
-              </td>
-              <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td16').split('/')[0]}} <br/>
-                {{ t('feesPage.td16').split('/')[1]}}
+                12.710 ден. <br/>
+                205 € <br/>
+                (174 € + 18% ДДВ)
               </td>
             </tr>
             <tr>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td04') }}
+                3
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                &#11088;&#11088;{{ t('feesPage.td17').split('/')[0]}} <br/>
-                {{ t('feesPage.td17').split('/')[1]}}
+                &#11088; Специјализанти и студенти
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td18').split('/')[0]}} <br/>
-                {{ t('feesPage.td18').split('/')[1]}}
+                6.820 ден. <br/>
+                110 € <br/>
+                (93 € + 18% ДДВ)
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td19').split('/')[0]}} <br/>
-                {{ t('feesPage.td19').split('/')[1]}}
+                8.060 ден. <br/>
+                130 € <br/>
+                (110 € + 18% ДДВ)
               </td>
               <td class="bg-light-blue-lighten-4 border">
-                {{ t('feesPage.td20').split('/')[0]}} <br/>
-                {{ t('feesPage.td20').split('/')[1]}}
+                8.990 ден. <br/>
+                145 € <br/>
+                (123 € + 18% ДДВ)
+              </td>
+            </tr>
+            <tr>
+              <td class="bg-light-blue-lighten-4 border">
+                4
+              </td>
+              <td class="bg-light-blue-lighten-4 border">
+                &#11088;&#11088; Претставници на компании и други придружби
+              </td>
+              <td class="bg-light-blue-lighten-4 border">
+                6.820 ден. <br/>
+                110 € <br/>
+                (93 € + 18% ДДВ)
+              </td>
+              <td class="bg-light-blue-lighten-4 border">
+                8.060 ден. <br/>
+                130 € <br/>
+                (110 € + 18% ДДВ)
+              </td>
+              <td class="bg-light-blue-lighten-4 border">
+                8.990 ден. <br/>
+                145 € <br/>
+                (123 € + 18% ДДВ)
               </td>
             </tr>
             </tbody>
@@ -256,67 +247,72 @@ async function handleSubmit() {
         </v-responsive>
       </v-card>
       <paragraph-no-indent class="text-center">
-        <b><span class="text-orange-darken-3">{{ t('feesPage.p2B') }}</span></b>
+        <b><span class="text-orange-darken-3">ВО ЦЕНАТА Е ВКЛУЧЕН 18% ДДВ</span></b>
       </paragraph-no-indent>
       <paragraph-no-indent class="text-center">
         <b style="color: #125280">
-          {{ t('feesPage.p3B') }}
+          Висината на цената за секоја категорија, ќе се пресметува според
+          ДАДЕНИТЕ РОКОВИ ВО ЦЕНОВНИКОТ и ДЕНОТ НА УПЛАТАТА. <br/>
+          КОТИЗАЦИЈАТА ЗА СИМПОЗИУМОТ ВКЛУЧУВА:
         </b>
       </paragraph-no-indent>
       <small-card class="bg-light-blue-darken-2 mb-5">
         <v-row>
           <v-col cols="6">
             <base-list class="text-white font-weight-bold">
-              <li>{{ t('feesPage.l1') }}</li>
-              <li>{{ t('feesPage.l2') }}</li>
-              <li>{{ t('feesPage.l3') }}</li>
+              <li>Комплет материјал и ID карта</li>
+              <li>Присуство на сите научни сесии</li>
+              <li>Сертификат со одобрени бодови од ЛКРСМ</li>
             </base-list>
           </v-col>
           <v-col cols="6">
             <base-list class="text-white font-weight-bold">
-              <li>{{ t('feesPage.l4') }}</li>
-              <li>{{ t('feesPage.l5') }}</li>
-              <li>{{ t('feesPage.l6') }} &#11088;&#11088;&#11088;</li>
+              <li>Пристап во изложбениот простор</li>
+              <li>Присуство на свечено отворање</li>
+              <li>Присуство на кафе паузи и организирани ручеци</li>
             </base-list>
           </v-col>
         </v-row>
+        <base-paragraph class="text-center mt-5 text-white">&#11088;&#11088;&#11088;ПРИСУСТВО НА СВЕЧЕНИ ВЕЧЕРИ</base-paragraph>
       </small-card>
       <paragraph-no-indent>
         <b>
-          {{ t('feesPage.p4B') }}&#11088;: {{ t('feesPage.p4B2') }} <span class="text-orange-darken-3">{{ t('feesPage.p4Y')}}</span>
+          НАПОМЕНА за категоријата &#11088;: СПЕЦИЈАЛИЗАНТИТЕ И СТУДЕНТИТЕ, ЗАДОЛЖИТЕЛНО мора да испратат Потврда од факултет дека се запишани на студии во тек во тековната учебна година. Учесниците во оваа категорија, добиваат ID картица,
+          програма и слободен влез на сите предавања и други организирани активности. Овие учесници <span class="text-orange-darken-3">ДОБИВААТ СЕРТИФИКАТ ЗА УЧЕСТВО, НО НЕ ИМ СЛЕДУВААТ ПЕЧАТЕНИ МАТЕРИЈАЛИ.</span>
         </b>
       </paragraph-no-indent>
       <paragraph-no-indent>
         <b>
-          {{ t('feesPage.p5B') }}&#11088;&#11088;: {{ t('feesPage.p5B2') }} <span class="text-orange-darken-3">{{ t('feesPage.p5Y')}}</span>
+          НАПОМЕНА за категоријата &#11088;&#11088;: Претставници на компании може да бидат само вработени во Компании кои УЧЕСТВУВАААТ на настанот со Спонзорски пакет или со Штанд. Други придружници може да бидат само брачни другари или членови на потесно семество. Учесниците во оваа категорија,
+          добиваат програма и ID картица за слободен влез на сите предавања и други организирани активности. Овие учесници  <span class="text-orange-darken-3">НЕ ДОБИВААТ СЕРТИФИКАТ ЗА УЧЕСТВО И ПЕЧАТЕНИ МАТЕРИЈАЛИ.</span>
         </b>
       </paragraph-no-indent>
       <paragraph-no-indent>
         <b>
-          {{ t('feesPage.p6B') }}&#11088;&#11088;&#11088;: <span class="text-decoration-underline">{{ t('feesPage.p6U') }}</span> {{ t('feesPage.p6B2') }}
+          НАПОМЕНА за категоријата &#11088;&#11088;&#11088;: <span class="text-decoration-underline">СИТЕ УЧЕСНИЦИ КОИ ИМААТ ПЛАТЕНО КОТИЗАЦИЈА И НЕ СЕ СМЕСТЕНИ ВО ХОТЕЛ ДРИМ</span>, ЗА ПРИСУСТВО НА СВЕЧЕНИТЕ ВЕЧЕРИ, РУЧЕЦИ, КОКТЕЛИ И/ИЛИ КАФЕ ПАУЗИ, АВАНСНО ПЛАЌААТ 45 € ПО ЧОВЕК, ЗА СЕКОЈА ВЕЧЕРА ПОСЕБНО.
         </b>
       </paragraph-no-indent>
       <paragraph-no-indent>
         <b>
-          <span class="text-decoration-underline">{{ t('feesPage.p7U') }}</span> {{ t('feesPage.p7B')}}
+          <span class="text-decoration-underline">СИТЕ УЧЕСНИЦИ КОИ НЕМААТ ПЛАТЕНО КОТИЗАЦИЈА И НЕ СЕ СМЕСТЕНИ ВО ХОТЕЛ ДРИМ</span>, ЗА ПРИСУСТВО НА СВЕЧЕНИТЕ ВЕЧЕРИ, РУЧЕЦИ, КОКТЕЛИ И/ИЛИ КАФЕ ПАУЗИ, АВАНСНО ПЛАЌААТ 60 € ПО ЧОВЕК, ЗА СЕКОЈ ОБРОК ПОСЕБНО.
         </b>
       </paragraph-no-indent>
       <paragraph-no-indent class="text-center">
         <b style="color: #125280">
-          {{ t('feesPage.p8B') }} <br/>
-          {{ t('feesPage.p8B2').split('/')[0] }} | {{ t('feesPage.p8B2').split('/')[1] }}<br/>
-          {{ t('feesPage.p8B3') }} <br/>
-          <span class="text-orange-darken-3">{{ t('feesPage.p8Y') }}</span>
+          Уплатата за КОТИЗАЦИЈА се врши во агенцијата ГЛОБАЛ НЕТ АДВ <br/>
+          жиро сметка: 200-0031649772-96 | Стопанска банка а.д. Скопjе<br/>
+          Цел на плаќање: ,,Симпозиум ЗПЛРМ 17 -19.04.2026,, <br/>
+          <span class="text-orange-darken-3">Сите уплати мора да бидат завршени пред започнување на настанот!</span>
         </b>
       </paragraph-no-indent>
     </base-card>
-    <small-card class="mt-10" v-if="hide">
+    <small-card class="mt-10" v-if="!hide">
       <v-form @submit.prevent="handleSubmit" ref="formRef">
         <v-text-field
           variant="outlined"
           density="comfortable"
           v-model="form.name"
-          :label="t('feesPage.nameLabel')"
+          label="Име"
           required
           :rules="validRule"
         />
@@ -324,7 +320,7 @@ async function handleSubmit() {
           variant="outlined"
           density="comfortable"
           v-model="form.email"
-          :label="t('feesPage.emailLabel')"
+          label="Е-пошта"
           required
           type="email"
           :rules="validRule"
@@ -333,7 +329,7 @@ async function handleSubmit() {
           variant="outlined"
           density="comfortable"
           v-model="form.phone"
-          :label="t('feesPage.phoneLabel')"
+          label="Телефонски број"
           required
           :rules="phoneRule"
         />
@@ -341,7 +337,7 @@ async function handleSubmit() {
           variant="outlined"
           density="comfortable"
           v-model="form.institution"
-          :label="t('feesPage.institutionLabel')"
+          label="Институција"
           required
           :rules="validRule"
         />
@@ -349,7 +345,7 @@ async function handleSubmit() {
           variant="outlined"
           density="comfortable"
           v-model="form.category"
-          :label="t('feesPage.categoryLabel')"
+          label="Категорија"
           :items="categoryOptions"
           item-title="title"
           item-value="value"
@@ -359,7 +355,7 @@ async function handleSubmit() {
         <v-file-input
           v-if="form.category === 4"
           v-model="file"
-          :label="t('feesPage.uploadLabel')"
+          label="Прикачи документ (JPG, JPEG)"
           accept="image/jpeg,image/png,image/heic"
           :rules="fileRule"
           variant="outlined"
@@ -367,7 +363,7 @@ async function handleSubmit() {
           show-size
         />
         <v-btn type="submit" color="primary" class="mt-4" :loading="loading">
-          {{ t('feesPage.submitLabel') }}
+          Поднеси
         </v-btn>
         <v-alert
           v-if="message"

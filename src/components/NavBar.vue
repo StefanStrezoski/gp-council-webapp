@@ -10,14 +10,14 @@
       <v-app-bar-title>
         <div class="d-flex align-center">
           <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block"/>
-          <span class="logo-text">{{ t('navtitle.one') }}<br/>{{ t('navtitle.two') }}</span>
+          <span class="logo-text">Здружение на приватни лекари на Р.Македонија<br/>„Како до подобро здравје“</span>
         </div>
       </v-app-bar-title>
 
       <div class="text-right pr-5 mr-4 info-section" style="border-right: 1px solid black">
         <p>
-          {{ t('infoSection.l1') }} <br/>
-          {{ t('infoSection.l2') }}
+          31.10.-02.11.2025 <br/>
+          Хотел Дрим Струга
         </p>
       </div>
 
@@ -26,7 +26,7 @@
         target="_blank"
         class="text-caption text-white text-decoration-none location-link"
       >
-        📍 {{ t('location') }}
+        📍 Локација
       </a>
     </v-container>
   </v-app-bar>
@@ -54,28 +54,10 @@
           class="nav-tab pa-3"
           :prepend-icon="tab.icon"
         >
-          {{ t(`${tab.label}`) }}
+          {{ tab.label }}
         </v-tab>
       </v-tabs>
       <v-spacer></v-spacer>
-      <v-btn-toggle
-        v-model="selectedLang"
-        mandatory
-        density="compact"
-        class="lang-toggle d-none d-md-flex ms-4"
-        @update:modelValue="changeLanguage"
-      >
-        <v-btn
-          v-for="lang in languages"
-          :key="lang.code"
-          :value="lang.code"
-          size="small"
-          variant="text"
-          class="text-white text-caption d-flex align-center"
-        >
-          <v-img :src="lang.icon" height="16" width="24" class="me-1" />
-        </v-btn>
-      </v-btn-toggle>
       <!-- Mobile Menu -->
       <v-app-bar-nav-icon
         class="d-md-none"
@@ -102,32 +84,15 @@
         <template v-slot:prepend>
           <v-icon>{{ tab.icon }}</v-icon>
         </template>
-        <v-list-item-title>{{ t(`${tab.label}`) }}</v-list-item-title>
+        <v-list-item-title>{{ tab.label }}</v-list-item-title>
       </v-list-item>
     </v-list>
-    <v-btn-toggle
-      v-model="selectedLang"
-      mandatory
-      density="compact"
-      @update:modelValue="changeLanguage"
-    >
-      <v-btn
-        v-for="lang in languages"
-        :key="lang.code"
-        :value="lang.code"
-        size="small"
-        variant="outlined"
-        class="text-caption d-flex align-center"
-      >
-        <v-img :src="lang.icon" height="16" width="24" class="me-1" />
-      </v-btn>
-    </v-btn-toggle>
     <a
       href="https://maps.app.goo.gl/5qJc3Phb38ACxsoU9"
       target="_blank"
-      class="text-caption text-white text-decoration-none"
+      class="text-caption text-white text-decoration-none pl-5"
     >
-      📍 {{ t('location') }}
+      📍 Локација
     </a>
   </v-navigation-drawer>
 </template>
@@ -135,25 +100,22 @@
 <script setup>
 import {computed, ref, watch} from 'vue';
 import {useRoute, useRouter} from "vue-router";
-// import logo from '@/assets/PharmacyLogoBelo.png'
-import {useI18n} from "vue-i18n";
+import logo from '@/assets/zplrmLOGO.png'
 import {useDisplay} from "vuetify/lib/composables/index.js";
 
 const router = useRouter()
 const route = useRoute()
-const { t, locale } = useI18n()
 const { xs, sm, mdAndUp } = useDisplay();
 
 const drawer = ref(false)
 const activeTab = ref(0)
 
 const tabs = [
-  { label: 'tabs.about', icon: 'mdi-information-outline', route: 'AboutPage' },
-  { label: 'tabs.symposium', icon: 'mdi-chair-school', route: 'SymposiumPage' },
-  { label: 'tabs.course', icon: 'mdi-school', route: 'CoursePage' },
-  { label: 'tabs.organization', icon: 'mdi-account-group', route: 'OrganizationPage' },
-  { label: 'tabs.program', icon: 'mdi-text-box-outline', route: 'ProgramPage' },
-  { label: 'tabs.pharmapractice2024', icon: 'mdi-book', route: 'PharmaPractice2024' },
+  { label: 'За настанот', icon: 'mdi-information-outline', route: 'AboutPage' },
+  { label: 'Симпозиум', icon: 'mdi-chair-school', route: 'SymposiumPage' },
+  { label: 'Апстракти', icon: 'mdi-file-document', route: 'AbstractsPage' },
+  { label: 'Регистрација', icon: 'mdi-cash', route: 'RegistrationPage' },
+  { label: 'Сместување', icon: 'mdi-bed', route: 'HotelPage' },
 ]
 
 // Watch route changes to update active tab
@@ -164,23 +126,7 @@ watch(route, (newRoute) => {
   }
 }, { immediate: true })
 
-const languages = [
-  { code: 'mk', label: '🇲🇰', icon: '/flags/mk_flag.svg' },
-  { code: 'en', label: '🇬🇧', icon: '/flags/gb_flag.svg' }
-]
-const selectedLang = ref(locale.value)
 
-const changeLanguage = (lang) => {
-  locale.value = lang
-  selectedLang.value = lang
-  localStorage.setItem('lang', lang)
-}
-
-const savedLang = localStorage.getItem('lang')
-if (savedLang) {
-  locale.value = savedLang
-  selectedLang.value = savedLang
-}
 
 const handleTabChange = (tabIndex) => {
   navigateToTab(tabs[tabIndex].route)
