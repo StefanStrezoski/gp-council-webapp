@@ -4,7 +4,7 @@
       <base-paragraph class="hero-title text-center">
         <b>
           Здружение на приватни лекари на Р.Македонија - ЗПЛРМ <br/>
-          „Како до подобро здравје“
+          Прв Симпозиум „Како до подобро здравје“
         </b>
       </base-paragraph>
     </small-card>

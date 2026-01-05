@@ -18,8 +18,8 @@ const { t } = useI18n();
 <template>
   <base-container>
     <base-card>
-      <paragraph-no-indent class="text-center">
-        <b><span class="text-orange-darken-3">СМЕСТУВАЊЕ</span></b>
+      <paragraph-no-indent class="text-center mb-5">
+        <span style="color: #125280" class="text-h5 font-weight-bold">СМЕСТУВАЊЕ</span>
       </paragraph-no-indent>
       <v-card rounded="l" class="mb-2 pa-1 text-center bg-light-blue-darken-4">
         <v-card-text><b>Цени за сместување во хотелот:</b></v-card-text>
@@ -52,11 +52,11 @@ const { t } = useI18n();
         <b>Можно е сместување и во повеќе креветни соби.</b>
       </paragraph-no-indent>
       <small-card class="bg-light-blue-darken-4 mb-5">
-        <paragraph-no-indent class="text-center"><span class="text-orange-darken-3"><b>ОТКАЖУВАЊЕ НА СМЕСТУВАЊЕ</b></span></paragraph-no-indent>
+        <paragraph-no-indent class="text-center"><span class="text-red"><b>ОТКАЖУВАЊЕ НА СМЕСТУВАЊЕ</b></span></paragraph-no-indent>
         <base-list class="font-weight-bold">
-          <li>За откажано сместување  <span class="text-orange-darken-3">до 16.03.2026, </span>средствата <span class="text-orange-darken-3">ќе се рефундираат во целост</span> намалени за банкарските трошоци.</li>
-          <li>За откажано сместување <span class="text-orange-darken-3">од 17.03.2026, </span>средствата <span class="text-orange-darken-3">ќе се рефундираат до 50%</span> од уплатените средства, намалени за банкарските трошоци.</li>
-          <li>За откажано сместување <span class="text-orange-darken-3">после 01.04.2026, НЕ СЛЕДУВА РЕФУНДАЦИЈА НА УПЛАТЕНИТЕ СРЕДСТВА.</span></li>
+          <li>За откажано сместување  <span class="text-red">до 16.03.2026, </span>средствата <span class="text-red">ќе се рефундираат во целост</span> намалени за банкарските трошоци.</li>
+          <li>За откажано сместување <span class="text-red">од 17.03.2026, </span>средствата <span class="text-red">ќе се рефундираат до 50%</span> од уплатените средства, намалени за банкарските трошоци.</li>
+          <li>За откажано сместување <span class="text-red">после 01.04.2026, НЕ СЛЕДУВА РЕФУНДАЦИЈА НА УПЛАТЕНИТЕ СРЕДСТВА.</span></li>
         </base-list>
       </small-card>
       <paragraph-no-indent class="text-center">
@@ -77,7 +77,7 @@ const { t } = useI18n();
               <v-icon class="pa-7 responsive-icon" color="white">mdi-phone-in-talk</v-icon>
               <ul class="font-weight-bold text-left custom-list" style="list-style-type: none">
                 <li><a href="tel:071/317-377" class="text-white text-decoration-none">071/317-377</a>, Марјан Димески</li>
-                <li><a href="tel:070/392-638" class="text-white text-decoration-none">070/392-638</a>, Лара</li>
+                <li><a href="tel:070/392-638" class="text-white text-decoration-none">070/392-638</a>, Лара Велевска</li>
               </ul>
             </v-row>
           </v-col>
@@ -112,7 +112,7 @@ const { t } = useI18n();
         </v-col>
       </v-row>
       <base-paragraph class="text-center mb-0">
-        <a href="https://zplrm2026.mk/" target="_blank" class="text-decoration-none text-lg-h4 font-weight-bold"><span class="text-orange-darken-3">www.zplrm2026.mk</span></a>
+        <a href="https://zplrm2026.mk/" target="_blank" class="text-decoration-none text-lg-h4 font-weight-bold"><span class="text-red">www.zplrm2026.mk</span></a>
       </base-paragraph>
     </base-card>
   </base-container>

@@ -32,16 +32,15 @@ const categoryOptions = [
   { title: '2', value: 2 },
   { title: '3', value: 3 },
   { title: '4', value: 4 },
-  { title: '5', value: 5 },
 ];
 
-const validRule = [value => !!value || t('required')];
+const validRule = [value => !!value || 'Задолжително поле!'];
 const phoneRule = [
-  value => !!value || t('feesPage.required'),
-  value => /^[0-9+()-]{8,}$/.test(value) || t('feesPage.invalidPhone'),
+  value => !!value || 'Задолжително поле!',
+  value => /^[0-9+()-]{8,}$/.test(value) || 'Телефонскиот број не е валиден!',
 ];
 const fileRule = [
-  () => form.value.category !== 4 || !!file.value || t('feesPage.selectFile'),
+  () => form.value.category !== 4 || !!file.value || 'Одберете документ!',
 ];
 
 async function handleSubmit() {
@@ -58,16 +57,16 @@ async function handleSubmit() {
 
     const isValid = await formRef.value.validate();
     if (!isValid.valid) {
-      message.value = t('feesPage.errorMsg');
+      message.value = 'Се појави неочекувана грешка';
       loading.value = false;
       return;
     }
 
     let fileName = null;
 
-    if (form.value.category === 4) {
+    if (form.value.category === 3) {
       if (!file.value) {
-        message.value = t('feesPage.selectFile');
+        message.value = 'Прикачете документ';
         loading.value = false;
         return;
       }
@@ -76,7 +75,7 @@ async function handleSubmit() {
       fileName = `documents/${Date.now()}_${uuidv4()}${fileExtension}`;
 
       const { error: uploadError } = await supabase.storage
-        .from('abstracts')
+        .from('projects')
         .upload(fileName, file.value);
 
       if (uploadError) {
@@ -102,7 +101,7 @@ async function handleSubmit() {
       return;
     }
 
-    message.value = t('feesPage.successMsg') || 'Submission successful!';
+    message.value = 'Успешна апликација!';
     success.value = true;
     loading.value = false;
 
@@ -112,7 +111,7 @@ async function handleSubmit() {
     formRef.value?.resetValidation();
     formRef.value?.reset();
   } catch (error) {
-    message.value = t('feesPage.unexpectedError') || 'An unexpected error occurred.';
+    message.value = 'Се појави неочекувана грешка';
     loading.value = false;
   }
 }
@@ -122,7 +121,7 @@ async function handleSubmit() {
   <base-container>
     <base-card>
       <paragraph-no-indent class="text-center">
-        <b><span class="text-orange-darken-3">КОТИЗАЦИЈА ЗА УЧЕСНИЦИ</span></b>
+        <span style="color: #125280" class="text-h5 font-weight-bold">КОТИЗАЦИЈА ЗА УЧЕСНИЦИ</span>
       </paragraph-no-indent>
       <v-card outlined class="mt-5 mb-5">
         <v-responsive>
@@ -151,95 +150,95 @@ async function handleSubmit() {
             </thead>
             <tbody>
             <tr>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 1
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 Членови на ЗПЛРМ
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 8.990 ден. <br/>
                 145 € <br/>
-                (123 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(123 € + 18% ДДВ)</span>
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 9.920 ден. <br/>
                 160 € <br/>
-                (136 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(136 € + 18% ДДВ)</span>
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 11.160 ден. <br/>
                 180 € <br/>
-                (153 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(153 € + 18% ДДВ)</span>
               </td>
             </tr>
             <tr>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 2
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 Останати УЧЕСНИЦИ
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 10.230 ден. <br/>
                 165 € <br/>
-                (140 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(140 € + 18% ДДВ)</span>
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 11.470 ден. <br/>
                 185 € <br/>
-                (157 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(157 € + 18% ДДВ)</span>
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 12.710 ден. <br/>
                 205 € <br/>
-                (174 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(174 € + 18% ДДВ)</span>
               </td>
             </tr>
             <tr>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 3
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 &#11088; Специјализанти и студенти
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 6.820 ден. <br/>
                 110 € <br/>
-                (93 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(93 € + 18% ДДВ)</span>
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 8.060 ден. <br/>
                 130 € <br/>
-                (110 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(110 € + 18% ДДВ)</span>
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 8.990 ден. <br/>
                 145 € <br/>
-                (123 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(123 € + 18% ДДВ)</span>
               </td>
             </tr>
             <tr>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 4
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 &#11088;&#11088; Претставници на компании и други придружби
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 6.820 ден. <br/>
                 110 € <br/>
-                (93 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(93 € + 18% ДДВ)</span>
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 8.060 ден. <br/>
                 130 € <br/>
-                (110 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(110 € + 18% ДДВ)</span>
               </td>
-              <td class="bg-light-blue-lighten-4 border">
+              <td class="cell-bg border">
                 8.990 ден. <br/>
                 145 € <br/>
-                (123 € + 18% ДДВ)
+                <span class="text-red font-weight-bold">(123 € + 18% ДДВ)</span>
               </td>
             </tr>
             </tbody>
@@ -247,12 +246,12 @@ async function handleSubmit() {
         </v-responsive>
       </v-card>
       <paragraph-no-indent class="text-center">
-        <b><span class="text-orange-darken-3">ВО ЦЕНАТА Е ВКЛУЧЕН 18% ДДВ</span></b>
+        <b><span class="text-red">ВО ЦЕНАТА Е ВКЛУЧЕН 18% ДДВ</span></b>
       </paragraph-no-indent>
       <paragraph-no-indent class="text-center">
         <b style="color: #125280">
-          Висината на цената за секоја категорија, ќе се пресметува според
-          ДАДЕНИТЕ РОКОВИ ВО ЦЕНОВНИКОТ и ДЕНОТ НА УПЛАТАТА. <br/>
+          Висината на цената за секоја категорија, <span class="text-red"> ќе се пресметува според
+          ДАДЕНИТЕ РОКОВИ ВО <br/> ЦЕНОВНИКОТ и ДЕНОТ НА УПЛАТАТА. <br/> </span>
           КОТИЗАЦИЈАТА ЗА СИМПОЗИУМОТ ВКЛУЧУВА:
         </b>
       </paragraph-no-indent>
@@ -278,13 +277,13 @@ async function handleSubmit() {
       <paragraph-no-indent>
         <b>
           НАПОМЕНА за категоријата &#11088;: СПЕЦИЈАЛИЗАНТИТЕ И СТУДЕНТИТЕ, ЗАДОЛЖИТЕЛНО мора да испратат Потврда од факултет дека се запишани на студии во тек во тековната учебна година. Учесниците во оваа категорија, добиваат ID картица,
-          програма и слободен влез на сите предавања и други организирани активности. Овие учесници <span class="text-orange-darken-3">ДОБИВААТ СЕРТИФИКАТ ЗА УЧЕСТВО, НО НЕ ИМ СЛЕДУВААТ ПЕЧАТЕНИ МАТЕРИЈАЛИ.</span>
+          програма и слободен влез на сите предавања и други организирани активности. Овие учесници <span class="text-red">ДОБИВААТ СЕРТИФИКАТ ЗА УЧЕСТВО, НО НЕ ИМ СЛЕДУВААТ ПЕЧАТЕНИ МАТЕРИЈАЛИ.</span>
         </b>
       </paragraph-no-indent>
       <paragraph-no-indent>
         <b>
           НАПОМЕНА за категоријата &#11088;&#11088;: Претставници на компании може да бидат само вработени во Компании кои УЧЕСТВУВАААТ на настанот со Спонзорски пакет или со Штанд. Други придружници може да бидат само брачни другари или членови на потесно семество. Учесниците во оваа категорија,
-          добиваат програма и ID картица за слободен влез на сите предавања и други организирани активности. Овие учесници  <span class="text-orange-darken-3">НЕ ДОБИВААТ СЕРТИФИКАТ ЗА УЧЕСТВО И ПЕЧАТЕНИ МАТЕРИЈАЛИ.</span>
+          добиваат програма и ID картица за слободен влез на сите предавања и други организирани активности. Овие учесници  <span class="text-red">НЕ ДОБИВААТ СЕРТИФИКАТ ЗА УЧЕСТВО И ПЕЧАТЕНИ МАТЕРИЈАЛИ.</span>
         </b>
       </paragraph-no-indent>
       <paragraph-no-indent>
@@ -302,7 +301,7 @@ async function handleSubmit() {
           Уплатата за КОТИЗАЦИЈА се врши во агенцијата ГЛОБАЛ НЕТ АДВ <br/>
           жиро сметка: 200-0031649772-96 | Стопанска банка а.д. Скопjе<br/>
           Цел на плаќање: ,,Симпозиум ЗПЛРМ 17 -19.04.2026,, <br/>
-          <span class="text-orange-darken-3">Сите уплати мора да бидат завршени пред започнување на настанот!</span>
+          <span class="text-red">Сите уплати мора да бидат завршени пред започнување на настанот!</span>
         </b>
       </paragraph-no-indent>
     </base-card>
@@ -353,7 +352,7 @@ async function handleSubmit() {
           :rules="validRule"
         />
         <v-file-input
-          v-if="form.category === 4"
+          v-if="form.category === 3"
           v-model="file"
           label="Прикачи документ (JPG, JPEG)"
           accept="image/jpeg,image/png,image/heic"
@@ -380,4 +379,7 @@ async function handleSubmit() {
 </template>
 
 <style scoped>
+.cell-bg{
+  background-color: #c2e8ff;
+}
 </style>

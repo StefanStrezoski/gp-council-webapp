@@ -34,6 +34,7 @@ const validRule = [value => !!value || t('required')];
 //     success.value = false;
 //     loading.value = true;
 //
+//     // 1️⃣ Validate form
 //     if (!formRef.value) {
 //       message.value = 'Form reference is not available.';
 //       loading.value = false;
@@ -47,49 +48,50 @@ const validRule = [value => !!value || t('required')];
 //       return;
 //     }
 //
+//     // 2️⃣ Check file
 //     if (!file.value) {
 //       message.value = t('selectFile');
 //       loading.value = false;
 //       return;
 //     }
+//
 //     const fileExtension = file.value.name.match(/\.[^.]+$/)[0];
-//     const fileName = `submissions/${Date.now()}_${uuidv4()}${fileExtension}`;
+//     const uniqueFileName = `${Date.now()}_${uuidv4()}${fileExtension}`;
 //
-//     const { error: uploadError } = await supabase.storage
-//       .from('abstracts')
-//       .upload(fileName, file.value);
+//     // 3️⃣ Prepare FormData for Netlify Function
+//     const formData = new FormData();
+//     formData.append('name', form.value.name);
+//     formData.append('email', form.value.email);
+//     formData.append('institution', form.value.institution);
+//     formData.append('title', form.value.title);
+//     formData.append('file', file.value, uniqueFileName);
 //
-//     if (uploadError) {
-//       message.value = 'File upload failed: ' + uploadError.message;
-//       loading.value = false;
-//       return;
-//     }
-//
-//
-//     const { error: dbError } = await supabase.from('abstract_submissions').insert({
-//       name: form.value.name,
-//       email: form.value.email,
-//       institution: form.value.institution,
-//       abstract_title: form.value.title,
-//       file_name: fileName,
+//     // 4️⃣ Call Netlify Function
+//     const res = await fetch('/api/submit-abstracts', {
+//       method: 'POST',
+//       body: formData,
 //     });
 //
-//     if (dbError) {
-//       message.value = 'Failed to save submission: ' + dbError.message;
+//     if (!res.ok) {
+//       const errData = await res.json().catch(() => ({}));
+//       message.value = errData.error || t('abstractPage.unexpectedError');
 //       loading.value = false;
 //       return;
 //     }
 //
+//     // 5️⃣ Success
 //     message.value = t('abstractPage.successMsg');
 //     success.value = true;
 //     loading.value = false;
 //
+//     // Reset form
 //     form.value = { name: '', email: '', institution: '', title: '' };
 //     file.value = null;
-//
 //     formRef.value?.resetValidation();
 //     formRef.value?.reset();
+//
 //   } catch (error) {
+//     console.error(error);
 //     message.value = t('abstractPage.unexpectedError');
 //     loading.value = false;
 //   }
@@ -99,7 +101,7 @@ const validRule = [value => !!value || t('required')];
 <template>
   <base-container>
     <v-card rounded="xl" class="mb-2 pa-1 text-center title-card">
-      <v-card-text>ПОДНЕСУВАЊЕ НА АПСТРАКТИ </v-card-text>
+      <v-card-text class="text-h5 font-weight-bold">ПОДНЕСУВАЊЕ НА АПСТРАКТИ</v-card-text>
     </v-card>
     <base-card>
       <base-paragraph>
@@ -138,28 +140,30 @@ const validRule = [value => !!value || t('required')];
         Постер презентациите ќе се изведуваат исклучиво електронски на LCD екрани и затоа истите треба да бидат направени во размер <b>16:9 и резолуција мин. 300 dpi (.pdf формат).</b>
         За сите прифатени <b>АПСТРАКТИ</b>, одлука ќе донесе Научниот одбор.
       </base-paragraph>
-      <base-list class="text-center" style="color: #134b7a">
+      <base-list class="text-center mt-10 mb-10" style="color: #134b7a">
         <li><b>КРАЕН РОК ЗА ПОДНЕСУВАЊЕ НА АПСТРАКТИТЕ: <span class="text-red">05.03.2026 год.</span></b></li>
         <li><b> КРАЕН РОК ЗА ПОТВРДА НА ПРИФАТЕНИТЕ АПСТРАКТИ: <span class="text-red">10.03.2026 год.</span></b></li>
       </base-list>
-      <base-paragraph>
-        <b><span class="text-orange-darken-3">НАПОМЕНА:</span>Прифатените усни и постер презентации, овозможуваат соодветни бодови од акредитацијата на настанот, <span class="text-decoration-underline">НО САМО ЗА НОСИТЕЛОТ НА ТРУДОТ</span></b>
-      </base-paragraph>
-      <base-paragraph class="text-center text-red">
-        <b>Во Книгата на апстракти ќе бидат објавени Само прифатените апстракти</b> <br/>
-        <b>ЗА КОИ НОСИТЕЛОТ НА ТРУДОТ ИМА ПЛАТЕНА/ОБЕЗБЕДЕНА КОТИЗАЦИЈА.</b>
-      </base-paragraph>
-      <base-paragraph class="d-inline-block align-center">
-        <v-btn
-          :href="t('abstractPage.filePath')"
-          download
-          prepend-icon="mdi-download"
-          color="primary"
-          variant="outlined"
-        >
-          {{ t('abstractPage.p13') }}
-        </v-btn>
-      </base-paragraph>
+      <div class="mt-10 mb-10" style="border: 3px solid red; border-radius: 15px;">
+        <base-paragraph class="text-center">
+          <b><span class="text-red">НАПОМЕНА:</span>Прифатените усни и постер презентации, овозможуваат соодветни бодови од акредитацијата на настанот, <span class="text-decoration-underline">НО САМО ЗА НОСИТЕЛОТ НА ТРУДОТ</span></b>
+        </base-paragraph>
+        <base-paragraph class="text-center text-red">
+          <b>Во Книгата на апстракти ќе бидат објавени Само прифатените апстракти</b> <br/>
+          <b>ЗА КОИ НОСИТЕЛОТ НА ТРУДОТ ИМА ПЛАТЕНА/ОБЕЗБЕДЕНА КОТИЗАЦИЈА.</b>
+        </base-paragraph>
+      </div>
+<!--      <base-paragraph class="d-inline-block align-center">-->
+<!--        <v-btn-->
+<!--          :href="t('abstractPage.filePath')"-->
+<!--          download-->
+<!--          prepend-icon="mdi-download"-->
+<!--          color="primary"-->
+<!--          variant="outlined"-->
+<!--        >-->
+<!--          {{ t('abstractPage.p13') }}-->
+<!--        </v-btn>-->
+<!--      </base-paragraph>-->
     </base-card>
 <!--    <small-card class="mt-10 text-center">-->
 <!--      <v-form @submit.prevent="handleSubmit" ref="formRef">-->
@@ -191,7 +195,6 @@ const validRule = [value => !!value || t('required')];
 <!--          {{ message }}-->
 <!--        </v-alert>-->
 <!--      </v-form>-->
-<!--      <h1 style="color: red">{{ t('abstractPage.expired') }}</h1>-->
 <!--    </small-card>-->
   </base-container>
 </template>

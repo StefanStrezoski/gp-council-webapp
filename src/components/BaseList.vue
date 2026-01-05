@@ -17,7 +17,7 @@
 
 @media (max-width: 768px) {
   .hero-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.55rem;
     text-align: left;
     list-style-position: inside;
   }

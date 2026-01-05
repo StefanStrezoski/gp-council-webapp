@@ -10,13 +10,13 @@
       <v-app-bar-title>
         <div class="d-flex align-center">
           <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block"/>
-          <span class="logo-text">Здружение на приватни лекари на Р.Македонија<br/>„Како до подобро здравје“</span>
+          <span class="logo-text">Здружение на приватни лекари на Р.Македонија<br/>Прв Симпозиум „Како до подобро здравје“</span>
         </div>
       </v-app-bar-title>
 
       <div class="text-right pr-5 mr-4 info-section" style="border-right: 1px solid black">
         <p>
-          31.10.-02.11.2025 <br/>
+          17-19 Април 2026 год.<br/>
           Хотел Дрим Струга
         </p>
       </div>
@@ -100,7 +100,7 @@
 <script setup>
 import {computed, ref, watch} from 'vue';
 import {useRoute, useRouter} from "vue-router";
-import logo from '@/assets/zplrmLOGO.png'
+import logo from '@/assets/logozplrm.png'
 import {useDisplay} from "vuetify/lib/composables/index.js";
 
 const router = useRouter()
@@ -138,11 +138,11 @@ const navigateToTab = (routeName) => {
 }
 
 const barHeight = computed(() => {
-  return xs.value || sm.value ? 80 : 120;
+  return xs.value || sm.value ? 70 : 90;
 });
 
 const logoHeight = computed(() => {
-  return xs.value || sm.value ? 55 : 85;
+    return xs.value || sm.value ? 40 : 60;
 });
 
 const logoWidth = computed(() => {
@@ -168,7 +168,7 @@ const logoWidth = computed(() => {
   font-weight: 500 !important;
   text-transform: uppercase !important;
   border-radius: 20px !important;
-  margin: 0 2px !important;
+  margin: 0 10px !important;
   transition: all 0.3s ease !important;
 }
 
