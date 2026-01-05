@@ -152,7 +152,7 @@ const logoWidth = computed(() => {
 
 <style scoped>
 .app-bar {
-  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
+  background: linear-gradient(135deg, #207cbd 0%, #005d98 100%) !important;
 }
 
 .logo {
@@ -194,7 +194,7 @@ const logoWidth = computed(() => {
   border-left: 4px solid #81e6d9 !important;
 }
 .top-info-bar {
-  background: #2d3748 !important;
+  background: #004679 !important;
   color: white !important;
   font-size: 0.875rem;
   z-index: 10;
