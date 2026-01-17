@@ -105,7 +105,7 @@ const validRule = [value => !!value || t('required')];
     </v-card>
     <base-card>
       <base-paragraph>
-        Поднесувањетo на апстрактите се врши електронски со праќање на мејл до <a href="mailto:gnaapstrakti2@gmail.com" class="text-decoration-none">gnaapstrakti2@gmail.com</a>, со користење на прикачениот образец од веб страната:
+        Поднесувањетo на апстрактите се врши електронски со праќање на мејл на следниов <a href="mailto:gnaapstrakti2@gmail.com" class="text-decoration-none">линк</a>, со користење на прикачениот образец од веб страната:
       </base-paragraph>
       <base-paragraph class="text-center text-h4">
         <b><a href="https://zplrm2026.mk" class="text-decoration-none" target="_blank">www.zplrm2026.mk</a></b>
