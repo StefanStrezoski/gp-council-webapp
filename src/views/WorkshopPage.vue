@@ -78,12 +78,6 @@ onMounted(() => {
   fetchSubmissionCounts();
 });
 
-const presentationTypes = [
-  { title: 'Орална презентација', value: 'Oralna prezentacija' },
-  { title: 'Постер презентација', value: 'Poster prezentacija' },
-  { title: 'Е-постер презентација', value: 'E-poster prezentacija' }
-];
-
 const rules = {
   required: value => !!value || 'Задолжително поле!',
   email: value => {
