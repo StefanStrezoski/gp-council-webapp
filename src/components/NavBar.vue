@@ -1,107 +1,65 @@
 <template>
-  <v-app-bar
-    flat
-    density="compact"
-    :height="barHeight"
-    class="top-info-bar"
-    elevation="4"
-  >
+  <v-app-bar flat density="compact" :height="barHeight" class="top-info-bar" elevation="4">
     <v-container class="d-flex justify-space-between align-center pl-0">
       <v-app-bar-title>
         <div class="d-flex align-center">
-          <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block"/>
-          <span class="logo-text">Здружение на приватни лекари на Р.Македонија<br/>Прв Симпозиум „Како до подобро здравје“</span>
+          <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block" />
+          <span class="logo-text">Здружение на приватни лекари на Р.Македонија<br />Прв Симпозиум „Како до подобро
+            здравје“</span>
         </div>
       </v-app-bar-title>
 
       <div class="text-right pr-5 mr-4 info-section" style="border-right: 1px solid black">
         <p>
-          17-19 Април 2026 год.<br/>
+          17-19 Април 2026 год.<br />
           Хотел Дрим Струга
         </p>
       </div>
 
-      <a
-        href="https://maps.app.goo.gl/5qJc3Phb38ACxsoU9"
-        target="_blank"
-        class="text-caption text-white text-decoration-none location-link"
-      >
+      <a href="https://maps.app.goo.gl/5qJc3Phb38ACxsoU9" target="_blank"
+        class="text-caption text-white text-decoration-none location-link">
         📍 Локација
       </a>
     </v-container>
   </v-app-bar>
-  <v-app-bar
-    :elevation="4"
-    class="app-bar"
-    height="60"
-    fixed
-    density="compact"
-  >
+  <v-app-bar :elevation="4" class="app-bar" height="60" fixed density="compact">
     <v-container class="d-flex align-center">
       <!-- Desktop Navigation -->
-      <v-tabs
-        v-model="activeTab"
-        class="d-none d-md-flex"
-        align-tabs="center"
-        color="accent"
-        slider-color="accent"
-        @update:model-value="handleTabChange"
-      >
-        <v-tab
-          v-for="(tab, index) in tabs"
-          :key="index"
-          :value="index"
-          class="nav-tab pa-3"
-          :prepend-icon="tab.icon"
-        >
+      <v-tabs v-model="activeTab" class="d-none d-md-flex" align-tabs="center" color="accent" slider-color="accent"
+        @update:model-value="handleTabChange">
+        <v-tab v-for="(tab, index) in tabs" :key="index" :value="index" class="nav-tab pa-3" :prepend-icon="tab.icon">
           {{ tab.label }}
         </v-tab>
       </v-tabs>
       <v-spacer></v-spacer>
       <!-- Mobile Menu -->
-      <v-app-bar-nav-icon
-        class="d-md-none"
-        @click="drawer = !drawer"
-        color="white"
-      ></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
     </v-container>
   </v-app-bar>
 
   <!-- Mobile Navigation Drawer -->
-  <v-navigation-drawer
-    v-model="drawer"
-    temporary
-    location="right"
-    class="mobile-nav"
-  >
+  <v-navigation-drawer v-model="drawer" temporary location="right" class="mobile-nav">
     <v-list>
-      <v-list-item
-        v-for="(tab, index) in tabs"
-        :key="index"
-        @click="navigateToTab(tab.route)"
-        :class="{ 'active-mobile-item': $route.name === tab.route }"
-      >
+      <v-list-item v-for="(tab, index) in tabs" :key="index" @click="navigateToTab(tab.route)"
+        :class="{ 'active-mobile-item': $route.name === tab.route }">
         <template v-slot:prepend>
           <v-icon>{{ tab.icon }}</v-icon>
         </template>
         <v-list-item-title>{{ tab.label }}</v-list-item-title>
       </v-list-item>
     </v-list>
-    <a
-      href="https://maps.app.goo.gl/5qJc3Phb38ACxsoU9"
-      target="_blank"
-      class="text-caption text-white text-decoration-none pl-5"
-    >
+    <a href="https://maps.app.goo.gl/5qJc3Phb38ACxsoU9" target="_blank"
+      class="text-caption text-white text-decoration-none pl-5">
       📍 Локација
     </a>
   </v-navigation-drawer>
 </template>
 
 <script setup>
-import {computed, ref, watch} from 'vue';
-import {useRoute, useRouter} from "vue-router";
+import { computed, ref, watch } from 'vue';
+import { useRoute, useRouter } from "vue-router";
 import logo from '@/assets/logozplrm.png'
-import {useDisplay} from "vuetify/lib/composables/index.js";
+import { useDisplay } from "vuetify/lib/composables/index.js";
 
 const router = useRouter()
 const route = useRoute()
@@ -112,10 +70,13 @@ const activeTab = ref(0)
 
 const tabs = [
   { label: 'За настанот', icon: 'mdi-information-outline', route: 'AboutPage' },
-  { label: 'Симпозиум', icon: 'mdi-chair-school', route: 'SymposiumPage' },
+  { label: 'За нас', icon: 'mdi-chair-school', route: 'SymposiumPage' },
   { label: 'Апстракти', icon: 'mdi-file-document', route: 'AbstractsPage' },
+  { label: 'Програма', icon: 'mdi-calendar-text', route: 'ProgramPage' },
+  { label: 'Работилници', icon: 'mdi-account-hard-hat', route: 'WorkshopPage' },
   { label: 'Регистрација', icon: 'mdi-cash', route: 'RegistrationPage' },
   { label: 'Сместување', icon: 'mdi-bed', route: 'HotelPage' },
+  { label: 'Зачленување', icon: 'mdi-account-plus', route: 'MembershipPage' },
 ]
 
 // Watch route changes to update active tab
@@ -142,7 +103,7 @@ const barHeight = computed(() => {
 });
 
 const logoHeight = computed(() => {
-    return xs.value || sm.value ? 40 : 60;
+  return xs.value || sm.value ? 40 : 60;
 });
 
 const logoWidth = computed(() => {
@@ -193,44 +154,53 @@ const logoWidth = computed(() => {
   background: rgba(129, 230, 217, 0.2) !important;
   border-left: 4px solid #81e6d9 !important;
 }
+
 .top-info-bar {
   background: #004679 !important;
   color: white !important;
   font-size: 0.875rem;
   z-index: 10;
 }
+
 .info-section {
   font-size: 1.1rem;
   line-height: 1.2rem;
 }
+
 .logo-text {
   font-size: 1.1rem;
   line-height: 1.2rem;
 }
+
 .lang-toggle {
   max-width: 100%;
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .lang-toggle .v-btn {
   min-width: 60px;
   padding: 0 8px;
   text-transform: none;
 }
+
 @media (min-width: 768px) {
   .mobile-nav {
     display: none;
   }
 
 }
+
 @media (max-width: 768px) {
   .logo-text {
     font-size: 0.55rem;
     line-height: 0.7rem;
   }
+
   .location-link {
     display: none;
   }
+
   .info-section {
     font-size: 0.5rem;
     line-height: 0.7rem;

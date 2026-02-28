@@ -4,6 +4,9 @@ import SymposiumPage from "@/views/SymposiumPage.vue";
 import AbstractPage from "@/views/AbstractPage.vue";
 import FeePage from "@/views/FeePage.vue";
 import HotelPage from "@/views/HotelPage.vue";
+import ProgramPage from '@/views/ProgramPage.vue';
+import MembershipPage from '@/views/MembershipPage.vue';
+import WorkshopPage from '@/views/WorkshopPage.vue';
 
 
 const router = createRouter({
@@ -25,6 +28,16 @@ const router = createRouter({
       component: AbstractPage
     },
     {
+      path: '/program',
+      name: 'ProgramPage',
+      component: ProgramPage
+    },
+    {
+      path: '/workshop',
+      name: 'WorkshopPage',
+      component: WorkshopPage
+    },
+    {
       path: '/registration',
       name: 'RegistrationPage',
       component: FeePage
@@ -33,6 +46,11 @@ const router = createRouter({
       path: '/accommodations',
       name: 'HotelPage',
       component: HotelPage
+    },
+    {
+      path: '/membership',
+      name: 'MembershipPage',
+      component: MembershipPage
     }
   ],
 })

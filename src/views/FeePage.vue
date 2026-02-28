@@ -5,11 +5,11 @@ import BaseCard from "@/components/BaseCard.vue";
 import SmallCard from "@/components/SmallCard.vue";
 import BaseList from "@/components/BaseList.vue";
 import ParagraphNoIndent from "@/components/ParagraphNoIndent.vue";
-import {useI18n} from "vue-i18n";
-import {ref} from "vue";
-import {v4 as uuidv4} from "uuid";
+import { useI18n } from "vue-i18n";
+import { ref } from "vue";
+import { v4 as uuidv4 } from "uuid";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import {supabase} from "@/supabase/supabase.js";
+import { supabase } from "@/supabase/supabase.js";
 
 const { t } = useI18n();
 
@@ -127,120 +127,110 @@ async function handleSubmit() {
         <v-responsive>
           <v-table class="elevation-1">
             <thead>
-            <tr>
-              <th class="text-center bg-light-blue-darken-2 border">
-                Категорија
-              </th>
-              <th class="text-center bg-light-blue-darken-2 border">
-                Вид на учесник
-              </th>
-              <th class="text-center bg-light-blue-darken-2 border">
-                УПЛАТА
-                ДО 16.03.2026
-              </th>
-              <th class="text-center bg-light-blue-darken-2 border">
-                УПЛАТА
-                ОД 17.03.2026
-              </th>
-              <th class="text-center bg-light-blue-darken-2 border">
-                УПЛАТА
-                ОД 01.04.2026
-              </th>
-            </tr>
+              <tr>
+                <th class="text-center bg-light-blue-darken-2 border">
+                  Категорија
+                </th>
+                <th class="text-center bg-light-blue-darken-2 border">
+                  Вид на учесник
+                </th>
+                <th class="text-center bg-light-blue-darken-2 border">
+                  УПЛАТА
+                  ДО 16.03.2026
+                </th>
+                <th class="text-center bg-light-blue-darken-2 border">
+                  УПЛАТА
+                  ОД 17.03.2026
+                </th>
+                <th class="text-center bg-light-blue-darken-2 border">
+                  УПЛАТА
+                  ОД 01.04.2026
+                </th>
+              </tr>
             </thead>
             <tbody>
-            <tr>
-              <td class="cell-bg border">
-                1
-              </td>
-              <td class="cell-bg border">
-                Членови на ЗПЛРМ
-              </td>
-              <td class="cell-bg border">
-                8.990 ден. <br/>
-                145 € <br/>
-                <span class="text-red font-weight-bold">(123 € + 18% ДДВ)</span>
-              </td>
-              <td class="cell-bg border">
-                9.920 ден. <br/>
-                160 € <br/>
-                <span class="text-red font-weight-bold">(136 € + 18% ДДВ)</span>
-              </td>
-              <td class="cell-bg border">
-                11.160 ден. <br/>
-                180 € <br/>
-                <span class="text-red font-weight-bold">(153 € + 18% ДДВ)</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cell-bg border">
-                2
-              </td>
-              <td class="cell-bg border">
-                Останати УЧЕСНИЦИ
-              </td>
-              <td class="cell-bg border">
-                10.230 ден. <br/>
-                165 € <br/>
-                <span class="text-red font-weight-bold">(140 € + 18% ДДВ)</span>
-              </td>
-              <td class="cell-bg border">
-                11.470 ден. <br/>
-                185 € <br/>
-                <span class="text-red font-weight-bold">(157 € + 18% ДДВ)</span>
-              </td>
-              <td class="cell-bg border">
-                12.710 ден. <br/>
-                205 € <br/>
-                <span class="text-red font-weight-bold">(174 € + 18% ДДВ)</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cell-bg border">
-                3
-              </td>
-              <td class="cell-bg border">
-                &#11088; Специјализанти и студенти
-              </td>
-              <td class="cell-bg border">
-                6.820 ден. <br/>
-                110 € <br/>
-                <span class="text-red font-weight-bold">(93 € + 18% ДДВ)</span>
-              </td>
-              <td class="cell-bg border">
-                8.060 ден. <br/>
-                130 € <br/>
-                <span class="text-red font-weight-bold">(110 € + 18% ДДВ)</span>
-              </td>
-              <td class="cell-bg border">
-                8.990 ден. <br/>
-                145 € <br/>
-                <span class="text-red font-weight-bold">(123 € + 18% ДДВ)</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cell-bg border">
-                4
-              </td>
-              <td class="cell-bg border">
-                &#11088;&#11088; Претставници на компании и други придружби
-              </td>
-              <td class="cell-bg border">
-                6.820 ден. <br/>
-                110 € <br/>
-                <span class="text-red font-weight-bold">(93 € + 18% ДДВ)</span>
-              </td>
-              <td class="cell-bg border">
-                8.060 ден. <br/>
-                130 € <br/>
-                <span class="text-red font-weight-bold">(110 € + 18% ДДВ)</span>
-              </td>
-              <td class="cell-bg border">
-                8.990 ден. <br/>
-                145 € <br/>
-                <span class="text-red font-weight-bold">(123 € + 18% ДДВ)</span>
-              </td>
-            </tr>
+              <tr>
+                <td class="cell-bg border">
+                  1
+                </td>
+                <td class="cell-bg border">
+                  Членови на ЗПЛРМ
+                </td>
+                <td class="cell-bg border">
+                  8.990 ден. <br />
+                  145 € <br />
+
+                </td>
+                <td class="cell-bg border">
+                  9.920 ден. <br />
+                  160 € <br />
+
+                </td>
+                <td class="cell-bg border">
+                  11.160 ден. <br /> 
+                  180 € <br />
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-bg border">
+                  2
+                </td>
+                <td class="cell-bg border">
+                  Останати УЧЕСНИЦИ
+                </td>
+                <td class="cell-bg border">
+                  10.230 ден. <br />
+                  165 € <br />
+                </td>
+                <td class="cell-bg border">
+                  11.470 ден. <br />
+                  185 € <br />
+                </td>
+                <td class="cell-bg border">
+                  12.710 ден. <br />
+                  205 € <br />
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-bg border">
+                  3
+                </td>
+                <td class="cell-bg border">
+                  &#11088; Специјализанти и студенти
+                </td>
+                <td class="cell-bg border">
+                  6.820 ден. <br />
+                  110 € <br />
+                </td>
+                <td class="cell-bg border">
+                  8.060 ден. <br />
+                  130 € <br />
+                </td>
+                <td class="cell-bg border">
+                  8.990 ден. <br />
+                  145 € <br />
+                </td>
+              </tr>
+              <tr>
+                <td class="cell-bg border">
+                  4
+                </td>
+                <td class="cell-bg border">
+                  &#11088;&#11088; Претставници на компании и други придружби
+                </td>
+                <td class="cell-bg border">
+                  6.820 ден. <br />
+                  110 € <br />
+                </td>
+                <td class="cell-bg border">
+                  8.060 ден. <br />
+                  130 € <br />
+                </td>
+                <td class="cell-bg border">
+                  8.990 ден. <br />
+                  145 € <br />
+                </td>
+              </tr>
             </tbody>
           </v-table>
         </v-responsive>
@@ -250,8 +240,8 @@ async function handleSubmit() {
       </paragraph-no-indent>
       <paragraph-no-indent class="text-center">
         <b style="color: #125280">
-          Висината на цената за секоја категорија, <span class="text-red"><br/> ќе се пресметува според
-          ДАДЕНИТЕ РОКОВИ ВО ЦЕНОВНИКОТ и ДЕНОТ НА УПЛАТАТА. <br/> </span>
+          Висината на цената за секоја категорија, <span class="text-red"><br /> ќе се пресметува според
+            ДАДЕНИТЕ РОКОВИ ВО ЦЕНОВНИКОТ и ДЕНОТ НА УПЛАТАТА. <br /> </span>
           КОТИЗАЦИЈАТА ЗА СИМПОЗИУМОТ ВКЛУЧУВА:
         </b>
       </paragraph-no-indent>
@@ -272,107 +262,70 @@ async function handleSubmit() {
             </base-list>
           </v-col>
         </v-row>
-        <base-paragraph class="text-center mt-5 text-white">&#11088;&#11088;&#11088;ПРИСУСТВО НА СВЕЧЕНИ ВЕЧЕРИ</base-paragraph>
+        <base-paragraph class="text-center mt-5 text-white">&#11088;&#11088;&#11088;ПРИСУСТВО НА СВЕЧЕНИ
+          ВЕЧЕРИ</base-paragraph>
       </small-card>
       <paragraph-no-indent>
         <b>
-          НАПОМЕНА за категоријата &#11088;: СПЕЦИЈАЛИЗАНТИТЕ И СТУДЕНТИТЕ, ЗАДОЛЖИТЕЛНО мора да испратат Потврда од факултет дека се запишани на студии во тек во тековната учебна година. Учесниците во оваа категорија, добиваат ID картица,
-          програма и слободен влез на сите предавања и други организирани активности. Овие учесници <br/> <span class="text-red">ДОБИВААТ СЕРТИФИКАТ ЗА УЧЕСТВО, НО НЕ ИМ СЛЕДУВААТ ПЕЧАТЕНИ МАТЕРИЈАЛИ.</span>
+          НАПОМЕНА за категоријата &#11088;: СПЕЦИЈАЛИЗАНТИТЕ И СТУДЕНТИТЕ, ЗАДОЛЖИТЕЛНО мора да испратат Потврда од
+          факултет дека се запишани на студии во тек во тековната учебна година. Учесниците во оваа категорија, добиваат
+          ID картица,
+          програма и слободен влез на сите предавања и други организирани активности. Овие учесници <br /> <span
+            class="text-red">ДОБИВААТ СЕРТИФИКАТ ЗА УЧЕСТВО, НО НЕ ИМ СЛЕДУВААТ ПЕЧАТЕНИ МАТЕРИЈАЛИ.</span>
         </b>
       </paragraph-no-indent>
       <paragraph-no-indent>
         <b>
-          НАПОМЕНА за категоријата &#11088;&#11088;: Претставници на компании може да бидат само вработени во Компании кои УЧЕСТВУВАААТ на настанот со Спонзорски пакет или со Штанд. Други придружници може да бидат само брачни другари или членови на потесно семество. Учесниците во оваа категорија,
-          добиваат програма и ID картица за слободен влез на сите предавања и други организирани активности. Овие учесници <br/>   <span class="text-red">НЕ ДОБИВААТ СЕРТИФИКАТ ЗА УЧЕСТВО И ПЕЧАТЕНИ МАТЕРИЈАЛИ.</span>
+          НАПОМЕНА за категоријата &#11088;&#11088;: Претставници на компании може да бидат само вработени во Компании
+          кои УЧЕСТВУВАААТ на настанот со Спонзорски пакет или со Штанд. Други придружници може да бидат само брачни
+          другари или членови на потесно семество. Учесниците во оваа категорија,
+          добиваат програма и ID картица за слободен влез на сите предавања и други организирани активности. Овие
+          учесници <br /> <span class="text-red">НЕ ДОБИВААТ СЕРТИФИКАТ ЗА УЧЕСТВО И ПЕЧАТЕНИ МАТЕРИЈАЛИ.</span>
         </b>
       </paragraph-no-indent>
       <paragraph-no-indent class="text-center">
         <b>
-          НАПОМЕНА за категоријата &#11088;&#11088;&#11088;: СИТЕ УЧЕСНИЦИ КОИ <br/> <span class="text-red">ИМААТ ПЛАТЕНО КОТИЗАЦИЈА, A НЕ СЕ СМЕСТЕНИ ВО ХОТЕЛ ДРИМ,</span> <br/> ЗА ПРИСУСТВО НА СВЕЧЕНИТЕ ВЕЧЕРИ <span class="text-red"> <br/> АВАНСНО ДОПЛАЌААТ 45 € ПО ЧОВЕК, ЗА СЕКОЈА ВЕЧЕРА ПОСЕБНО.</span>
+          НАПОМЕНА за категоријата &#11088;&#11088;&#11088;: СИТЕ УЧЕСНИЦИ КОИ <br /> <span class="text-red">ИМААТ
+            ПЛАТЕНО КОТИЗАЦИЈА, A НЕ СЕ СМЕСТЕНИ ВО ХОТЕЛ ДРИМ,</span> <br /> ЗА ПРИСУСТВО НА СВЕЧЕНИТЕ ВЕЧЕРИ <span
+            class="text-red"> <br /> АВАНСНО ДОПЛАЌААТ 45 € ПО ЧОВЕК, ЗА СЕКОЈА ВЕЧЕРА ПОСЕБНО.</span>
         </b>
       </paragraph-no-indent>
       <paragraph-no-indent class="text-center mb-10">
         <b>
-          СИТЕ УЧЕСНИЦИ КОИ <br/> <span class="text-red">НЕМААТ ПЛАТЕНО КОТИЗАЦИЈА И НЕ СЕ СМЕСТЕНИ ВО ХОТЕЛ ДРИМ,</span> <br/>
-          ЗА ПРИСУСТВО НА СВЕЧЕНИТЕ ВЕЧЕРИ, РУЧЕЦИ, КОКТЕЛИ И/ИЛИ КАФЕ ПАУЗИ,<br/>
+          СИТЕ УЧЕСНИЦИ КОИ <br /> <span class="text-red">НЕМААТ ПЛАТЕНО КОТИЗАЦИЈА И НЕ СЕ СМЕСТЕНИ ВО ХОТЕЛ
+            ДРИМ,</span> <br />
+          ЗА ПРИСУСТВО НА СВЕЧЕНИТЕ ВЕЧЕРИ, РУЧЕЦИ, КОКТЕЛИ И/ИЛИ КАФЕ ПАУЗИ,<br />
           <span class="text-red">АВАНСНО ПЛАЌААТ 60 € ПО ЧОВЕК, ЗА СЕКОЈ ОБРОК ПОСЕБНО.</span>
         </b>
       </paragraph-no-indent>
       <paragraph-no-indent class="text-center">
         <b style="color: #125280">
-          Уплатата за КОТИЗАЦИЈА се врши во агенцијата ГЛОБАЛ НЕТ АДВ <br/>
-          жиро сметка: 200-0031649772-96 | Стопанска банка а.д. Скопjе<br/>
-          Цел на плаќање: ,,Симпозиум ЗПЛРМ 17 -19.04.2026,, <br/>
+          Уплатата за КОТИЗАЦИЈА се врши во агенцијата ГЛОБАЛ НЕТ АДВ <br />
+          жиро сметка: 200-0031649772-96 | Стопанска банка а.д. Скопjе<br />
+          Цел на плаќање: ,,Симпозиум ЗПЛРМ 17 -19.04.2026,, <br />
           <span class="text-red">Сите уплати мора да бидат завршени пред започнување на настанот!</span>
         </b>
       </paragraph-no-indent>
     </base-card>
     <small-card class="mt-10" v-if="!hide">
       <v-form @submit.prevent="handleSubmit" ref="formRef">
-        <v-text-field
-          variant="outlined"
-          density="comfortable"
-          v-model="form.name"
-          label="Име"
-          required
-          :rules="validRule"
-        />
-        <v-text-field
-          variant="outlined"
-          density="comfortable"
-          v-model="form.email"
-          label="Е-пошта"
-          required
-          type="email"
-          :rules="validRule"
-        />
-        <v-text-field
-          variant="outlined"
-          density="comfortable"
-          v-model="form.phone"
-          label="Телефонски број"
-          required
-          :rules="phoneRule"
-        />
-        <v-text-field
-          variant="outlined"
-          density="comfortable"
-          v-model="form.institution"
-          label="Институција"
-          required
-          :rules="validRule"
-        />
-        <v-select
-          variant="outlined"
-          density="comfortable"
-          v-model="form.category"
-          label="Категорија"
-          :items="categoryOptions"
-          item-title="title"
-          item-value="value"
-          required
-          :rules="validRule"
-        />
-        <v-file-input
-          v-if="form.category === 3"
-          v-model="file"
-          label="Прикачи документ (JPG, JPEG)"
-          accept="image/jpeg,image/png,image/heic"
-          :rules="fileRule"
-          variant="outlined"
-          density="comfortable"
-          show-size
-        />
+        <v-text-field variant="outlined" density="comfortable" v-model="form.name" label="Име" required
+          :rules="validRule" />
+        <v-text-field variant="outlined" density="comfortable" v-model="form.email" label="Е-пошта" required
+          type="email" :rules="validRule" />
+        <v-text-field variant="outlined" density="comfortable" v-model="form.phone" label="Телефонски број" required
+          :rules="phoneRule" />
+        <v-text-field variant="outlined" density="comfortable" v-model="form.institution" label="Институција" required
+          :rules="validRule" />
+        <v-select variant="outlined" density="comfortable" v-model="form.category" label="Категорија"
+          :items="categoryOptions" item-title="title" item-value="value" required :rules="validRule" />
+        <v-file-input v-if="form.category === 3" v-model="file" label="Прикачи документ (JPG, JPEG)"
+          accept="image/jpeg,image/png,image/heic" :rules="fileRule" variant="outlined" density="comfortable"
+          show-size />
         <v-btn type="submit" color="primary" class="mt-4" :loading="loading">
           Поднеси
         </v-btn>
-        <v-alert
-          v-if="message"
-          class="mt-4"
-          :type="success ? 'success' : 'error'"
-          border="start"
-          variant="tonal"
-        >
+        <v-alert v-if="message" class="mt-4" :type="success ? 'success' : 'error'" border="start" variant="tonal">
           {{ message }}
         </v-alert>
       </v-form>
@@ -381,7 +334,7 @@ async function handleSubmit() {
 </template>
 
 <style scoped>
-.cell-bg{
+.cell-bg {
   background-color: #c2e8ff;
 }
 </style>
