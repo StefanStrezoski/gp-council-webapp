@@ -73,7 +73,7 @@ const tabs = [
   { label: 'За нас', icon: 'mdi-chair-school', route: 'SymposiumPage' },
   { label: 'Апстракти', icon: 'mdi-file-document', route: 'AbstractsPage' },
   { label: 'Програма', icon: 'mdi-calendar-text', route: 'ProgramPage' },
-  { label: 'Работилници', icon: 'mdi-account-hard-hat', route: 'WorkshopPage' },
+  { label: 'Работилници', icon: 'mdi-presentation', route: 'WorkshopPage' },
   { label: 'Регистрација', icon: 'mdi-cash', route: 'RegistrationPage' },
   { label: 'Сместување', icon: 'mdi-bed', route: 'HotelPage' },
   { label: 'Зачленување', icon: 'mdi-account-plus', route: 'MembershipPage' },

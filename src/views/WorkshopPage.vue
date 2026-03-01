@@ -12,7 +12,6 @@ const message = ref('');
 const success = ref(false);
 
 const formData = ref({
-  abstractTitle: '',
   firstName: '',
   lastName: '',
   institution: '',
@@ -20,9 +19,6 @@ const formData = ref({
   email: '',
   phone: '',
   category: null,
-  presentationType: null,
-  abstractFile: null,
-  consent: null
 });
 
 const SUBMISSION_LIMIT = 35;
@@ -131,9 +127,6 @@ async function handleSubmit() {
       country: formData.value.country,
       phone_number: formData.value.phone,
       category: formData.value.category,
-      presentation_type: formData.value.presentationType,
-      abstract_title: formData.value.abstractTitle,
-      consent: formData.value.consent
     });
 
     if (dbError) {
@@ -147,7 +140,6 @@ async function handleSubmit() {
     loading.value = false;
 
     formData.value = {
-      abstractTitle: '',
       firstName: '',
       lastName: '',
       institution: '',
@@ -155,8 +147,6 @@ async function handleSubmit() {
       email: '',
       phone: '',
       category: null,
-      presentationType: null,
-      consent: null
     };
 
     formRef.value?.resetValidation();
@@ -288,16 +278,6 @@ async function handleSubmit() {
       </base-paragraph>
       <v-form ref="formRef" @submit.prevent="handleSubmit">
         <v-row>
-          <v-col cols="12">
-            <v-text-field v-model="formData.abstractTitle" clearable
-              placeholder="Внесете заглавие на вашата работилница" variant="outlined" density="comfortable"
-              :rules="[rules.required]" required>
-              <template v-slot:label>
-                Наслов <span class="text-red">*</span>
-              </template>
-            </v-text-field>
-          </v-col>
-
           <v-col cols="12" md="6">
             <v-text-field v-model="formData.firstName" variant="outlined" density="comfortable" clearable
               :rules="[rules.required]" required>
