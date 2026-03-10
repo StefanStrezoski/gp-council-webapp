@@ -4,7 +4,7 @@
       <v-app-bar-title>
         <div class="d-flex align-center">
           <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block" />
-          <span class="logo-text">Здружение на приватни лекари на Р.Македонија<br />Прв Симпозиум „Како до подобро
+          <span class="logo-text">Здружение на приватни лекари Вашето Р.Македонија<br />Прв Симпозиум „Како до подобро
             здравје“</span>
         </div>
       </v-app-bar-title>
@@ -63,7 +63,7 @@ import { useDisplay } from "vuetify/lib/composables/index.js";
 
 const router = useRouter()
 const route = useRoute()
-const { xs, sm, mdAndUp } = useDisplay();
+const { xs, sm } = useDisplay();
 
 const drawer = ref(false)
 const activeTab = ref(0)
@@ -73,7 +73,7 @@ const tabs = [
   { label: 'За нас', icon: 'mdi-chair-school', route: 'SymposiumPage' },
   { label: 'Апстракти', icon: 'mdi-file-document', route: 'AbstractsPage' },
   { label: 'Програма', icon: 'mdi-calendar-text', route: 'ProgramPage' },
-  { label: 'Работилници', icon: 'mdi-presentation', route: 'WorkshopPage' },
+  { label: 'Стручни состаноци', icon: 'mdi-presentation', route: 'WorkshopPage' },
   { label: 'Регистрација', icon: 'mdi-cash', route: 'RegistrationPage' },
   { label: 'Сместување', icon: 'mdi-bed', route: 'HotelPage' },
   { label: 'Зачленување', icon: 'mdi-account-plus', route: 'MembershipPage' },

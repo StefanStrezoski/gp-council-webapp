@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
 import BaseContainer from "@/components/BaseContainer.vue";
-import desktopImg from "@/assets/Maticni lekari Za Nastanot.jpg"
-import {onMounted, onUnmounted, ref} from "vue";
+import desktopImg from "@/assets/Naslovna.jpg"
+import { onMounted, onUnmounted, ref } from "vue";
 
 const currentImage = ref(desktopImg);
 
@@ -23,11 +23,7 @@ const currentImage = ref(desktopImg);
 
 <template>
   <base-container>
-    <v-img
-      :src="desktopImg"
-      alt="About"
-      :class="{ 'desktop-image': currentImage === desktopImg }"
-    ></v-img>
+    <v-img :src="desktopImg" alt="About" :class="{ 'desktop-image': currentImage === desktopImg }"></v-img>
   </base-container>
 </template>
 

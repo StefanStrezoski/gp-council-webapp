@@ -1,6 +1,5 @@
 <script setup>
 import BaseContainer from "@/components/BaseContainer.vue";
-import BaseCard from "@/components/BaseCard.vue";
 import SmallCard from "@/components/SmallCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 
@@ -11,12 +10,12 @@ const programData = {
       date: "ПЕТОК, 17 АПРИЛ 2026",
       groups: [
         {
-          title: "РАБОТИЛНИЦИ",
+          title: "СТРУЧНИ СОСТАНОЦИ",
           items: [
-            "Работилница 1 ЕКГ ИНТЕРПРЕТАЦИЈА",
-            "Работилница 2 ИНТРААРТИКУЛАРНА АПЛИКАЦИЈА НА ЛЕКОВИ",
-            "Работилница 3 УЛТРАСОНОГРАФСКО ИСЛЕДУВАЊЕ",
-            "Работилница 4 УРГЕНТНИ СОСТОЈБИ ПРИ ПОЖАРИ И ИЗГОРЕНИЦИ"
+            "Стручен состанок 1 ЕКГ ИНТЕРПРЕТАЦИЈА",
+            "Стручен состанок 2 ИНТРААРТИКУЛАРНА АПЛИКАЦИЈА НА ЛЕКОВИ",
+            "Стручен состанок 3 УЛТРАСОНОГРАФСКО ИСЛЕДУВАЊЕ",
+            "Стручен состанок 4 УРГЕНТНИ СОСТОЈБИ ПРИ ПОЖАРИ И ИЗГОРЕНИЦИ"
           ]
         },
         {
