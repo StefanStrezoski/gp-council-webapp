@@ -4,7 +4,7 @@
       <v-app-bar-title>
         <div class="d-flex align-center">
           <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block" />
-          <span class="logo-text">Здружение на приватни лекари Вашето Р.Македонија<br />Прв Симпозиум „Како до подобро
+          <span class="logo-text">Здружение на приватни лекари во Р.Македонија<br />Прв Симпозиум „Како до подобро
             здравје“</span>
         </div>
       </v-app-bar-title>
