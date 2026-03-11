@@ -136,15 +136,15 @@ async function handleSubmit() {
                 </th>
                 <th class="text-center bg-light-blue-darken-2 border">
                   УПЛАТА
-                  ДО 16.03.2026
+                  ДО 05.04.2026
                 </th>
                 <th class="text-center bg-light-blue-darken-2 border">
                   УПЛАТА
-                  ОД 17.03.2026
+                  ОД 06.04.2026
                 </th>
                 <th class="text-center bg-light-blue-darken-2 border">
                   УПЛАТА
-                  ОД 01.04.2026
+                  ОД 13.04.2026
                 </th>
               </tr>
             </thead>
@@ -167,7 +167,7 @@ async function handleSubmit() {
 
                 </td>
                 <td class="cell-bg border">
-                  11.160 ден. <br /> 
+                  11.160 ден. <br />
                   180 € <br />
                 </td>
               </tr>
