@@ -27,7 +27,7 @@ const categoryCounts = ref({});
 const categoriesData = [
   { title: 'ЕКГ ИНТЕРПРЕТАЦИЈА', value: 'EKG INTERPRETACIJA' },
   { title: 'ИНТРААРТИКУЛАРНА АПЛИКАЦИЈА НА ЛЕКОВИ', value: 'INTRAARTIKULARNA APLIKACIJA NA LEKOVI' },
-  { title: 'УЛТРАСОНОГРАФСКО ИСЛЕДУВАЊЕ (ПОПОЛНЕТО)', value: 'ULTRASOLOGRAFSKO ISLEDUVANJE' },
+  { title: 'УЛТРАСОНОГРАФСКО ИСЛЕДУВАЊЕ', value: 'ULTRASOLOGRAFSKO ISLEDUVANJE' },
   { title: 'УРГЕНТНИ СОСТОЈБИ ПРИ ПОЖАРИ И ИЗГОРЕНИЦИ', value: 'URGENTNI SOSTOJBI PRI POZARI I IZGORENICI' }
 ];
 
@@ -348,6 +348,15 @@ async function handleSubmit() {
       <v-alert v-if="message" :type="success ? 'success' : 'error'" variant="tonal" class="mt-6" closable>
         {{ message }}
       </v-alert>
+
+      <base-paragraph class="mt-6">
+        Уплатата за учество се врши во агенцијата ГЛОБАЛ НЕТ АДВ на
+        жиро сметка: <b>200-0031649772-96</b> Стопанска банка а.д. Скопjе
+        Цел на плаќање:
+        <b>"Стручен симпозиум бр._____ на ЗПЛРМ 17.04.2026"</b>.
+        <span class="text-red font-weight-bold">Сите уплати мора да бидат завршени пред започнување на
+          настанот!</span>
+      </base-paragraph>
 
       <base-paragraph class="mt-8 text-grey-darken-1 text-center">
         <b>НАПОМЕНА:</b> Доколку не можете да се пријавите на некој од приложените стручни состаноци, тоа значи дека
