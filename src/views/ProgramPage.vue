@@ -2,6 +2,11 @@
 import BaseContainer from "@/components/BaseContainer.vue";
 import SmallCard from "@/components/SmallCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
+import { ref } from "vue";
+
+
+const embedCode = ref(`
+<iframe style="width:100%;height:600px" src="https://online.anyflip.com/ujmxk/pkib/index.html"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>`)
 
 const programData = {
   title: "РАБОТНА ПРОГРАМА",
@@ -91,6 +96,11 @@ const programData = {
         </small-card>
       </div>
     </div>
+
+    <small-card>
+      <div v-html="embedCode"></div>
+    </small-card>
+
   </base-container>
 </template>
 
