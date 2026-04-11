@@ -69,33 +69,6 @@ const programData = {
 
 <template>
   <base-container>
-    <!-- Title Section -->
-    <small-card class="mt-10">
-      <base-paragraph class="hero-title text-center">
-        <b>{{ programData.title }}</b>
-      </base-paragraph>
-    </small-card>
-
-    <div class="mt-10">
-      <!-- Day Sections -->
-      <div v-for="(day, dayIndex) in programData.days" :key="dayIndex" class="mb-8">
-        <small-card>
-          <h3 class="program-date mb-4">{{ day.date }}</h3>
-
-          <div v-for="(group, groupIndex) in day.groups" :key="groupIndex" class="group-wrapper mb-6">
-            <div v-if="group.title" class="hall-info mb-2"><b>{{ group.title }}</b></div>
-            <v-list density="compact" class="program-list">
-              <v-list-item v-for="(item, itemIndex) in group.items" :key="itemIndex" class="px-0">
-                <div class="d-flex align-start">
-                  <v-icon size="small" color="primary" class="mr-3 mt-1">mdi-circle-medium</v-icon>
-                  <span class="program-item-text">{{ item }}</span>
-                </div>
-              </v-list-item>
-            </v-list>
-          </div>
-        </small-card>
-      </div>
-    </div>
 
     <small-card>
       <div v-html="embedCode"></div>
