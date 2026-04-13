@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AboutPage from "@/views/AboutPage.vue";
 import SymposiumPage from "@/views/SymposiumPage.vue";
-import AbstractPage from "@/views/AbstractPage.vue";
+// import AbstractPage from "@/views/AbstractPage.vue";
 import FeePage from "@/views/FeePage.vue";
 import HotelPage from "@/views/HotelPage.vue";
 import ProgramPage from '@/views/ProgramPage.vue';
@@ -22,11 +22,11 @@ const router = createRouter({
       name: 'SymposiumPage',
       component: SymposiumPage
     },
-    {
-      path: '/abstracts',
-      name: 'AbstractsPage',
-      component: AbstractPage
-    },
+    // {
+    //   path: '/abstracts',
+    //   name: 'AbstractsPage',
+    //   component: AbstractPage
+    // },
     {
       path: '/program',
       name: 'ProgramPage',
