@@ -26,7 +26,7 @@ const categoryCounts = ref({});
 
 const categoriesData = [
   { title: 'ЕКГ ИНТЕРПРЕТАЦИЈА', value: 'EKG INTERPRETACIJA' },
-  { title: 'ИНТРААРТИКУЛАРНА АПЛИКАЦИЈА НА ЛЕКОВИ', value: 'INTRAARTIKULARNA APLIKACIJA NA LEKOVI' },
+  { title: 'ИНТРААРТИКУЛАРНА АПЛИКАЦИЈА НА ЛЕКОВИ', value: 'INTRAARTIKULARNA APLIKACIJA NA LEKOVI', props: { disabled: true } },
   { title: 'УЛТРАСОНОГРАФСКО ИСЛЕДУВАЊЕ', value: 'ULTRASOLOGRAFSKO ISLEDUVANJE' },
   { title: 'УРГЕНТНИ СОСТОЈБИ ПРИ ПОЖАРИ И ИЗГОРЕНИЦИ', value: 'URGENTNI SOSTOJBI PRI POZARI I IZGORENICI' }
 ];
