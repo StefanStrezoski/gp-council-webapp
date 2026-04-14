@@ -71,7 +71,7 @@ const activeTab = ref(0)
 const tabs = [
   { label: 'За настанот', icon: 'mdi-information-outline', route: 'AboutPage' },
   { label: 'За нас', icon: 'mdi-chair-school', route: 'SymposiumPage' },
-  { label: 'Апстракти', icon: 'mdi-file-document', route: 'AbstractsPage' },
+  // { label: 'Апстракти', icon: 'mdi-file-document', route: 'AbstractsPage' },
   { label: 'Програма', icon: 'mdi-calendar-text', route: 'ProgramPage' },
   { label: 'Стручни состаноци', icon: 'mdi-presentation', route: 'WorkshopPage' },
   { label: 'Регистрација', icon: 'mdi-cash', route: 'RegistrationPage' },
